@@ -138,7 +138,7 @@ async function init(){
   }
   DATES = Object.keys(ALL).sort();
   const visible = REVIEW ? DATES : DATES.filter(d=>d<=today);
-  if(!visible.length){ $("board").innerHTML='<div class="msg" style="grid-column:1/-1">Prva zagonetka stiže uskoro!</div>'; return; }
+  if(!visible.length){ $("board").innerHTML='<div class="msg" style="grid-column:1/-1">Prva zagonetka stiže 1. prosinca 2026. Vidimo se!</div>'; return; }
   $("reviewBar").hidden = !REVIEW;
   buildArchive(visible);
   const start = ALL[today] ? today : visible.filter(d=>d<=today).pop() || visible[0];
