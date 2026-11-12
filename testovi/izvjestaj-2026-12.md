@@ -7,7 +7,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-01
 
 - 🟨 **Božićni ukrasi**: KUGLA, LAMPICE, ŠIŠARKA, ZVIJEZDA
-- 🟩 **Svemir**: PLANET, KOMET, GALAKSIJA, MIR
+- 🟩 **Svemir**: PLANET, KOMET, GALAKSIJA, MJESEC
 - 🟦 **Jadranski otoci**: PAG, KORČULA, MLJET, LASTOVO
 - 🟪 **Unatrag daju novu riječ**: RAB, VIS, TOP, LOV
 
