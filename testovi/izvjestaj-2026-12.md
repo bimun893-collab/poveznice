@@ -36,7 +36,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 - 🟨 **Pecivo**: KIFLA, PEREC, ŠTRUCA, BAGETA
 - 🟩 **Građevine**: KUĆA, DVORAC, TORANJ, PAGODA
 - 🟦 **Dječje igre**: ŠKOLICA, SKRIVAČA, LASTIK, LOVICE
-- 🟪 **Kriju hrvatski otok**: VISOKO, RABARBARA, BRAČNI, VIRUS
+- 🟪 **Kriju hrvatski otok**: VISOKO, GRABLJE, BRAČNI, VIRUS
 
 - [ ] pregledano
 
