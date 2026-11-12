@@ -262,7 +262,7 @@ function openHelp(){
   openModal("<h2>Kako se igra</h2><p>Pronađi skupine od četiri riječi koje imaju nešto zajedničko. Odaberi četiri riječi i klikni <b>Provjeri</b>.</p>"+
     "<p>Svaka zagonetka ima točno jedno rješenje. Pazi na riječi koje se čine kao da pripadaju u više skupina! Smiješ pogriješiti najviše četiri puta.</p>"+
     "<p>Boje idu od najlakše do najteže skupine:</p><div class='ex'><span class='c0'>lagano</span><span class='c1'>srednje</span><span class='c2'>teže</span><span class='c3'>najteže</span></div>"+
-    "<p>Primjer: <b>BURA, JUGO, MAESTRAL, TRAMONTANA</b> su vjetrovi.</p><div style='text-align:center;margin-top:14px'><button class='btn primary' id='goPlay'>Igraj!</button></div>");
+    "<p>Primjer: <b>BURA, JUGO, MAESTRAL, TRAMONTANA</b> su vjetrovi.</p><p><b>Težina raste kroz tjedan:</b> ponedjeljak i utorak ⭐, srijeda i četvrtak ⭐⭐, od petka do nedjelje ⭐⭐⭐.</p><div style='text-align:center;margin-top:14px'><button class='btn primary' id='goPlay'>Igraj!</button></div>");
   $("goPlay").onclick = closeModal;
 }
 
@@ -362,12 +362,17 @@ async function init(){
 }
 
 const numOf = date => DATES.indexOf(date)+1;
+// Težina po danu u tjednu: pon–uto ⭐, sri–čet ⭐⭐, pet–ned ⭐⭐⭐
+const levelOf = date => { const w = fromIso(date).getDay(); return (w===1||w===2) ? 1 : (w===3||w===4) ? 2 : 3; };
+const starsOf = date => "⭐".repeat(levelOf(date));
+const LEVEL_NAME = ["","lakša","srednja","teška"];
 const fmt = date => fromIso(date).toLocaleDateString("hr-HR",{day:"numeric",month:"long",year:"numeric"});
 const fmtShort = date => fromIso(date).toLocaleDateString("hr-HR",{day:"numeric",month:"numeric"});
 
 function load(date){
   cur = date; puzzle = ALL[date];
-  $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date);
+  $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date)+" · "+starsOf(date);
+  $("dateLabel").title = "Težina: "+LEVEL_NAME[levelOf(date)];
   if(isLocked(date)){ renderLocked(); return; }
   const saved = store.get("pov-"+date);
   state = saved || { order: shuffle(puzzle.flatMap(g=>g[1]), seeded(date)), solved: [], guesses: [], mistakes: 0, done: false };
@@ -462,7 +467,7 @@ function finish(won){
 // ---------------- Dijeljenje ----------------
 function resultText(){
   const rows = state.guesses.map(g=>g.colors.map(c=>EMOJI[c]).join("")).join("\n");
-  return "Poveznice #"+numOf(cur)+(state.won?"":" ✗")+"\n"+rows;
+  return "Poveznice #"+numOf(cur)+" "+starsOf(cur)+(state.won?"":" ✗")+"\n"+rows;
 }
 async function shareText(text, url, title){
   const full = text + (url && !text.includes(url) ? "\n" + url : "");

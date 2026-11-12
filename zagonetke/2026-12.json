@@ -39,30 +39,21 @@
  ],
  "2026-12-02": [
   [
-   "Dijelovi bicikla",
-   [
-    "LANAC",
-    "PEDALA",
-    "SJEDALO",
-    "KOTAČ"
-   ]
-  ],
-  [
    "Šahovske figure",
    [
     "DAMA",
     "LOVAC",
-    "PJEŠAK",
-    "SKAKAČ"
+    "SKAKAČ",
+    "PJEŠAK"
    ]
   ],
   [
    "Zanimanja",
    [
     "RIBAR",
-    "PASTIR",
     "KOVAČ",
-    "ZIDAR"
+    "TESAR",
+    "PASTIR"
    ]
   ],
   [
@@ -73,18 +64,18 @@
     "ZUBATAC",
     "NOSAČ"
    ]
+  ],
+  [
+   "K + riječ = nova riječ",
+   [
+    "ROV",
+    "RAJ",
+    "OSA",
+    "RILO"
+   ]
   ]
  ],
  "2026-12-03": [
-  [
-   "Mliječni proizvodi",
-   [
-    "SIR",
-    "JOGURT",
-    "VRHNJE",
-    "KEFIR"
-   ]
-  ],
   [
    "Kartaške boje",
    [
@@ -104,63 +95,63 @@
    ]
   ],
   [
+   "Morski ___",
+   [
+    "JEŽ",
+    "KONJIC",
+    "KRASTAVAC",
+    "PAS"
+   ]
+  ],
+  [
    "S + riječ = nova riječ",
    [
     "LAVA",
     "VILA",
-    "PAS",
-    "LAMA"
+    "LAMA",
+    "PORT"
    ]
   ]
  ],
  "2026-12-04": [
   [
-   "Pecivo",
-   [
-    "KIFLA",
-    "PEREC",
-    "ŠTRUCA",
-    "BAGETA"
-   ]
-  ],
-  [
    "Građevine",
    [
-    "KUĆA",
     "DVORAC",
     "TORANJ",
-    "PAGODA"
+    "PAGODA",
+    "KULA"
    ]
   ],
   [
-   "Dječje igre",
+   "Ptice",
    [
-    "ŠKOLICA",
-    "SKRIVAČA",
-    "LASTIK",
-    "LOVICE"
+    "GALEB",
+    "RODA",
+    "LASTAVICA",
+    "KOS"
+   ]
+  ],
+  [
+   "Unatrag daju novu riječ",
+   [
+    "ŽAR",
+    "DAR",
+    "SIR",
+    "KAP"
    ]
   ],
   [
    "Kriju hrvatski otok",
    [
     "VISOKO",
-    "GRABLJE",
     "BRAČNI",
-    "VIRUS"
+    "VIRUS",
+    "VRABAC"
    ]
   ]
  ],
  "2026-12-05": [
-  [
-   "U učionici",
-   [
-    "PLOČA",
-    "KREDA",
-    "SPUŽVA",
-    "KATEDRA"
-   ]
-  ],
   [
    "Planeti",
    [
@@ -177,6 +168,15 @@
     "AMOR",
     "MINERVA",
     "DIJANA"
+   ]
+  ],
+  [
+   "___ sustav",
+   [
+    "SUNČEVI",
+    "ŽIVČANI",
+    "OPERACIJSKI",
+    "ŠKOLSKI"
    ]
   ],
   [
@@ -200,21 +200,21 @@
    ]
   ],
   [
-   "Agrumi",
-   [
-    "LIMUN",
-    "POMELO",
-    "GREJP",
-    "LIMETA"
-   ]
-  ],
-  [
    "U čizmici za svetog Nikolu",
    [
     "ČOKOLADA",
     "BOMBON",
     "ŠIBA",
     "MANDARINA"
+   ]
+  ],
+  [
+   "Kriju broj",
+   [
+    "PETLJA",
+    "TRIBINA",
+    "STOLICA",
+    "OSAMLJEN"
    ]
   ],
   [
@@ -323,12 +323,12 @@
    ]
   ],
   [
-   "Vrste kave",
+   "___ kava",
    [
-    "ESPRESSO",
-    "MAKIJATO",
-    "KAPUĆINO",
-    "BIJELA"
+    "TURSKA",
+    "BIJELA",
+    "CRNA",
+    "INSTANT"
    ]
   ],
   [
@@ -352,15 +352,6 @@
    ]
   ],
   [
-   "Rijeke",
-   [
-    "NERETVA",
-    "KORANA",
-    "MREŽNICA",
-    "ZRMANJA"
-   ]
-  ],
-  [
    "Nacionalni parkovi",
    [
     "PLITVICE",
@@ -370,11 +361,20 @@
    ]
   ],
   [
+   "Kriju životinju",
+   [
+    "RAKETA",
+    "LAVINA",
+    "KOSAČ",
+    "MIŠLJENJE"
+   ]
+  ],
+  [
    "Riječi koje su i muška imena",
    [
     "LAV",
     "VUK",
-    "JASEN",
+    "DRAGO",
     "GORAN"
    ]
   ]
@@ -399,12 +399,12 @@
    ]
   ],
   [
-   "Oblikovanje teksta",
+   "___ mreža",
    [
-    "PODEBLJANO",
-    "KURZIV",
-    "PODCRTANO",
-    "PRECRTANO"
+    "DRUŠTVENA",
+    "RAČUNALNA",
+    "RIBARSKA",
+    "PAUKOVA"
    ]
   ],
   [
@@ -418,15 +418,6 @@
   ]
  ],
  "2026-12-12": [
-  [
-   "Pića",
-   [
-    "VINO",
-    "PIVO",
-    "RAKIJA",
-    "PELINKOVAC"
-   ]
-  ],
   [
    "Kuhinjski aparati",
    [
@@ -446,6 +437,15 @@
    ]
   ],
   [
+   "___ vino",
+   [
+    "KUHANO",
+    "PJENUŠAVO",
+    "DESERTNO",
+    "STOLNO"
+   ]
+  ],
+  [
    "Božićni ___",
    [
     "SAJAM",
@@ -456,15 +456,6 @@
   ]
  ],
  "2026-12-13": [
-  [
-   "Žitarice",
-   [
-    "PŠENICA",
-    "JEČAM",
-    "ZOB",
-    "RAŽ"
-   ]
-  ],
   [
    "Glazbeni instrumenti",
    [
@@ -481,6 +472,15 @@
     "OLOVO",
     "KROM",
     "CINK"
+   ]
+  ],
+  [
+   "Kriju muško ime",
+   [
+    "ANTENA",
+    "PIVOVARA",
+    "MATEMATIKA",
+    "IVANČICA"
    ]
   ],
   [
@@ -571,15 +571,6 @@
  ],
  "2026-12-16": [
   [
-   "Plodovi mora",
-   [
-    "KOZICA",
-    "LIGNJA",
-    "HOBOTNICA",
-    "DAGNJA"
-   ]
-  ],
-  [
    "Grčka slova",
    [
     "ALFA",
@@ -598,25 +589,25 @@
    ]
   ],
   [
+   "Kriju grčko slovo",
+   [
+    "PSIHOLOG",
+    "RESTAURACIJA",
+    "CIGARETA",
+    "MIKROFON"
+   ]
+  ],
+  [
    "Može se pustiti",
    [
     "GLAZBA",
     "SUZA",
-    "PARA",
+    "GOLUB",
     "BALON"
    ]
   ]
  ],
  "2026-12-17": [
-  [
-   "Dijelovi ručnog sata",
-   [
-    "KAZALJKA",
-    "BROJČANIK",
-    "REMEN",
-    "BATERIJA"
-   ]
-  ],
   [
    "Valute",
    [
@@ -636,6 +627,15 @@
    ]
   ],
   [
+   "___ sat",
+   [
+    "RUČNI",
+    "ZIDNI",
+    "PJEŠČANI",
+    "SUNČANI"
+   ]
+  ],
+  [
    "Riječi koje su i hrvatski gradovi",
    [
     "RIJEKA",
@@ -646,15 +646,6 @@
   ]
  ],
  "2026-12-18": [
-  [
-   "Planinarska oprema",
-   [
-    "ŠATOR",
-    "RUKSAK",
-    "ČUTURA",
-    "KOMPAS"
-   ]
-  ],
   [
    "Dijelovi broda",
    [
@@ -671,6 +662,15 @@
     "ŠTAP",
     "MREŽA",
     "PLOVAK"
+   ]
+  ],
+  [
+   "___ ključ",
+   [
+    "VIOLINSKI",
+    "BASOVSKI",
+    "FRANCUSKI",
+    "KOMBINIRANI"
    ]
   ],
   [
@@ -703,21 +703,21 @@
    ]
   ],
   [
-   "Geometrijski likovi",
-   [
-    "KRUG",
-    "KVADRAT",
-    "TROKUT",
-    "ROMB"
-   ]
-  ],
-  [
    "Vrste kutova",
    [
     "PRAVI",
     "OŠTRI",
     "TUPI",
     "ISPRUŽENI"
+   ]
+  ],
+  [
+   "___ trokut",
+   [
+    "BERMUDSKI",
+    "LJUBAVNI",
+    "PRAVOKUTNI",
+    "OŠTROKUTNI"
    ]
   ]
  ],
@@ -729,15 +729,6 @@
     "UPUTNICA",
     "TOPLOMJER",
     "PREGLED"
-   ]
-  ],
-  [
-   "Nastavci datoteka",
-   [
-    "DOCX",
-    "XLSX",
-    "PDF",
-    "JPG"
    ]
   ],
   [
@@ -756,6 +747,15 @@
     "ODNOS",
     "NALOG",
     "TJEDAN"
+   ]
+  ],
+  [
+   "Kriju dio računala",
+   [
+    "DISKONT",
+    "RAMPA",
+    "ČIPKA",
+    "MIŠIĆ"
    ]
   ]
  ],
@@ -837,15 +837,6 @@
  ],
  "2026-12-23": [
   [
-   "U krevetu",
-   [
-    "MADRAC",
-    "JASTUK",
-    "PLAHTA",
-    "POPLUN"
-   ]
-  ],
-  [
    "Kućni ljubimci",
    [
     "MAČKA",
@@ -864,12 +855,21 @@
    ]
   ],
   [
-   "Pokusni ___",
+   "___ kruh",
+   [
+    "KUKURUZNI",
+    "RAŽENI",
+    "INTEGRALNI",
+    "CRNI"
+   ]
+  ],
+  [
+   "Probni ___",
    [
     "ROK",
     "RAD",
     "VOŽNJA",
-    "ZAMORAC"
+    "PERIOD"
    ]
   ]
  ],
@@ -884,21 +884,21 @@
    ]
   ],
   [
-   "Zimzelene biljke",
-   [
-    "IMELA",
-    "BOŽIKOVINA",
-    "JELA",
-    "BRŠLJAN"
-   ]
-  ],
-  [
    "U jaslicama",
    [
     "VOL",
     "MAGARAC",
     "MUDRACI",
     "OVČICE"
+   ]
+  ],
+  [
+   "Riječi koje su i ženska imena",
+   [
+    "JELA",
+    "NADA",
+    "ZORA",
+    "DUNJA"
    ]
   ],
   [
@@ -922,21 +922,21 @@
    ]
   ],
   [
-   "U dnevnoj sobi",
-   [
-    "KAUČ",
-    "TEPIH",
-    "FOTELJA",
-    "LUSTER"
-   ]
-  ],
-  [
    "Osiguranje",
    [
     "POLICA",
     "PREMIJA",
     "ODŠTETA",
     "FRANŠIZA"
+   ]
+  ],
+  [
+   "Isto se čitaju unatrag",
+   [
+    "KAJAK",
+    "RADAR",
+    "POTOP",
+    "OKO"
    ]
   ],
   [
@@ -950,15 +950,6 @@
   ]
  ],
  "2026-12-26": [
-  [
-   "Računske operacije: rezultat",
-   [
-    "ZBROJ",
-    "RAZLIKA",
-    "UMNOŽAK",
-    "KOLIČNIK"
-   ]
-  ],
   [
    "Dijelovi pjesme",
    [
@@ -975,6 +966,15 @@
     "PERFEKT",
     "FUTUR",
     "AORIST"
+   ]
+  ],
+  [
+   "Kriju glazbeni žanr",
+   [
+    "DŽEZVA",
+    "POPIS",
+    "FOLKLOR",
+    "RAPSODIJA"
    ]
   ],
   [
@@ -998,21 +998,21 @@
    ]
   ],
   [
-   "U novinama",
-   [
-    "NASLOV",
-    "ČLANAK",
-    "INTERVJU",
-    "KOLUMNA"
-   ]
-  ],
-  [
    "Hrvatska vina",
    [
     "POŠIP",
     "GRAŠEVINA",
     "TERAN",
     "MALVAZIJA"
+   ]
+  ],
+  [
+   "___ vrata",
+   [
+    "KLIZNA",
+    "RAJSKA",
+    "PRTLJAŽNA",
+    "ULAZNA"
    ]
   ],
   [
@@ -1103,15 +1103,6 @@
  ],
  "2026-12-30": [
   [
-   "Zubi",
-   [
-    "SJEKUTIĆ",
-    "OČNJAK",
-    "KUTNJAK",
-    "UMNJAK"
-   ]
-  ],
-  [
    "Društvene igre",
    [
     "ŠAH",
@@ -1130,12 +1121,21 @@
    ]
   ],
   [
+   "___ vrijeme",
+   [
+    "SLOBODNO",
+    "LOŠE",
+    "LIJEPO",
+    "LJETNO"
+   ]
+  ],
+  [
    "Dodaj -AR i dobiješ zanimanje",
    [
-    "KLJUČ",
+    "ZID",
     "STOL",
     "LIM",
-    "KAMEN"
+    "ZUB"
    ]
   ]
  ],
@@ -1150,21 +1150,21 @@
    ]
   ],
   [
-   "Horoskopski znakovi",
-   [
-    "BIK",
-    "BLIZANCI",
-    "RIBE",
-    "OVAN"
-   ]
-  ],
-  [
    "Doček Nove godine",
    [
     "VATROMET",
     "ŠAMPANJAC",
     "ODBROJAVANJE",
     "KONFETI"
+   ]
+  ],
+  [
+   "___ godina",
+   [
+    "NOVA",
+    "PRIJESTUPNA",
+    "ŠKOLSKA",
+    "SVJETLOSNA"
    ]
   ],
   [
