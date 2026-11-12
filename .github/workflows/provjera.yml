@@ -1,0 +1,17 @@
+name: Provjera zagonetki
+
+on:
+  push:
+    paths: ["zagonetke/**", "testovi/**"]
+  pull_request:
+    paths: ["zagonetke/**", "testovi/**"]
+
+jobs:
+  provjera:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node testovi/provjeri.mjs
