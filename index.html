@@ -5,8 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Poveznice – dnevna igra povezivanja riječi</title>
 <meta name="description" content="Poveznice: hrvatska dnevna igra riječi. Pronađi četiri skupine od po četiri riječi. Nova zagonetka svaki dan.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Poveznice – dnevna igra riječi">
+<meta property="og:description" content="16 riječi, 4 skupine, 1 zagonetka dnevno. Pazi na zamke!">
+<meta property="og:url" content="https://4x4.com.hr/">
+<meta property="og:image" content="https://4x4.com.hr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="hr_HR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='13' height='13' rx='3' fill='%23f2c45a'/%3E%3Crect x='17' y='2' width='13' height='13' rx='3' fill='%238cc084'/%3E%3Crect x='2' y='17' width='13' height='13' rx='3' fill='%237fb2d6'/%3E%3Crect x='17' y='17' width='13' height='13' rx='3' fill='%23b48ac9'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<script src="config.js"></script>
 <style>
   :root{
     --bg:#f6f1e7; --ink:#1f2a2e; --muted:#6b726f; --tile:#e6dfd0; --tile-sel:#3c4a4f;
@@ -16,14 +27,17 @@
   [hidden]{display:none!important}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;
     min-height:100vh;display:flex;justify-content:center}
-  .wrap{width:100%;max-width:620px;padding:20px 14px 40px}
-  header{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+  .wrap{width:100%;max-width:620px;padding:16px 14px 40px}
+  header{border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+  .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
   h1{font-family:Fraunces,serif;font-weight:800;font-size:2rem;margin:0;letter-spacing:-.5px}
   h1 span{display:inline-flex;gap:3px;margin-left:8px;vertical-align:middle}
   h1 span i{width:10px;height:10px;border-radius:2px;display:block}
-  .meta{font-size:.85rem;color:var(--muted);text-align:right}
-  .meta select{font:inherit;background:transparent;border:1px solid var(--line);border-radius:6px;padding:2px 4px;color:var(--ink);max-width:150px}
-  .icon-btn{background:none;border:2px solid var(--ink);border-radius:50%;width:32px;height:32px;font-weight:800;cursor:pointer;color:var(--ink);margin-left:6px}
+  .icons{display:flex;gap:6px;align-items:center}
+  .icon-btn{background:none;border:2px solid var(--ink);border-radius:999px;min-width:34px;height:34px;padding:0 9px;font:800 .85rem "Nunito Sans",sans-serif;cursor:pointer;color:var(--ink)}
+  .icon-btn.fill{background:var(--ink);color:#fff}
+  .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px;font-size:.85rem;color:var(--muted)}
+  .meta select{font:inherit;background:transparent;border:1px solid var(--line);border-radius:6px;padding:2px 4px;color:var(--ink);max-width:170px}
   .intro{text-align:center;margin:6px 0 14px;font-size:1rem}
   .review{background:#fff3c4;border:1px dashed #c9a43a;border-radius:8px;padding:8px 10px;font-size:.85rem;margin-bottom:12px;text-align:center}
   .board{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -44,24 +58,42 @@
   .dot{width:13px;height:13px;border-radius:50%;background:var(--tile-sel);transition:opacity .3s,transform .3s}
   .dot.gone{opacity:.15;transform:scale(.6)}
   .controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .btn{font:700 .95rem "Nunito Sans",sans-serif;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+  .btn{font:700 .95rem "Nunito Sans",sans-serif;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
   .btn.primary{background:var(--ink);color:#fff}
+  .btn.small{padding:7px 14px;font-size:.85rem}
   .btn:disabled{opacity:.35;cursor:default}
-  .toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s;z-index:20}
+  .toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s;z-index:50;max-width:90vw;text-align:center}
   .toast.show{opacity:1}
   .end{margin-top:22px;text-align:center;border-top:1px solid var(--line);padding-top:18px}
   .end h2{font-family:Fraunces,serif;margin:0 0 6px}
   .grid-emoji{font-size:1.4rem;line-height:1.25;margin:10px 0;letter-spacing:2px}
+  .share{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0}
   .stats{display:flex;justify-content:center;gap:22px;margin:12px 0;flex-wrap:wrap}
   .stats div{text-align:center}.stats b{display:block;font-size:1.5rem;font-family:Fraunces,serif}
   .stats span{font-size:.75rem;color:var(--muted)}
-  .modal{position:fixed;inset:0;background:rgba(31,42,46,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:30}
+  .dist{margin:10px auto 4px;max-width:320px;text-align:left;font-size:.85rem}
+  .dist div{display:flex;align-items:center;gap:6px;margin:3px 0}
+  .dist i{display:block;height:18px;background:var(--tile-sel);color:#fff;border-radius:3px;font-style:normal;font-size:.75rem;padding:0 6px;line-height:18px;min-width:22px;text-align:right}
+  .modal{position:fixed;inset:0;background:rgba(31,42,46,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:40}
   .modal.open{display:flex}
-  .card{background:var(--bg);border-radius:12px;max-width:440px;padding:22px;line-height:1.5}
+  .card{background:var(--bg);border-radius:12px;max-width:460px;width:100%;max-height:88vh;overflow:auto;padding:22px;line-height:1.5;position:relative}
   .card h2{font-family:Fraunces,serif;margin-top:0}
+  .card .x{position:absolute;top:10px;right:12px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink)}
+  .card input{font:inherit;padding:9px 12px;border:2px solid var(--line);border-radius:8px;width:100%;background:#fff;margin:6px 0}
+  .row{display:flex;gap:8px;align-items:center}
+  .row input{flex:1}
+  .muted{color:var(--muted);font-size:.85rem}
+  .tabs{display:flex;gap:6px;margin-bottom:10px}
+  .tabs button{flex:1}
+  .tabs button.on{background:var(--ink);color:#fff}
+  table.lb{width:100%;border-collapse:collapse;font-size:.9rem}
+  table.lb td{padding:6px 4px;border-bottom:1px solid var(--line)}
+  table.lb tr.me{font-weight:800;background:#fff3c4}
   .ex{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
   .ex span{padding:3px 8px;border-radius:5px;font-weight:800;font-size:.8rem}
-  .msg{text-align:center;padding:40px 10px;color:var(--muted)}
+  .msg{text-align:center;padding:40px 10px;color:var(--muted);grid-column:1/-1}
+  .lock{grid-column:1/-1;text-align:center;padding:30px 14px;border:2px dashed var(--line);border-radius:12px}
+  .lock b{font-family:Fraunces,serif;font-size:1.3rem;display:block;margin-bottom:6px}
   footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:30px}
   footer a{color:var(--muted)}
 </style>
@@ -69,16 +101,24 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>Poveznice<span><i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i></span></h1>
+    <div class="top">
+      <h1>Poveznice<span><i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i></span></h1>
+      <div class="icons">
+        <button class="icon-btn" id="statsBtn" aria-label="Statistika" title="Statistika">📊</button>
+        <button class="icon-btn" id="lbBtn" aria-label="Ljestvica" title="Ljestvica" hidden>🏆</button>
+        <button class="icon-btn" id="helpBtn" aria-label="Pravila" title="Pravila">?</button>
+        <button class="icon-btn fill" id="accountBtn" hidden>Prijava</button>
+      </div>
+    </div>
     <div class="meta">
-      <div id="dateLabel"></div>
-      <div>Arhiva: <select id="archive" aria-label="Arhiva zagonetki"></select><button class="icon-btn" id="helpBtn" aria-label="Pravila">?</button></div>
+      <span id="dateLabel"></span>
+      <span>Arhiva: <select id="archive" aria-label="Arhiva zagonetki"></select></span>
     </div>
   </header>
 
   <div class="review" id="reviewBar" hidden>Način pregleda: vidiš i buduće zagonetke. Igrači ih ne vide.</div>
-  <p class="intro">Složi četiri skupine od po četiri riječi!</p>
-  <div class="board" id="board"><div class="msg" style="grid-column:1/-1">Učitavam zagonetku…</div></div>
+  <p class="intro" id="intro">Složi četiri skupine od po četiri riječi!</p>
+  <div class="board" id="board"><div class="msg">Učitavam zagonetku…</div></div>
 
   <div class="mistakes" id="mistakesRow">Preostale pogreške: <span id="dots"></span></div>
   <div class="controls" id="controls">
@@ -93,71 +133,256 @@
 
 <div class="toast" id="toast" role="status"></div>
 
-<div class="modal" id="help">
-  <div class="card">
-    <h2>Kako se igra</h2>
-    <p>Pronađi skupine od četiri riječi koje imaju nešto zajedničko. Odaberi četiri riječi i klikni <b>Provjeri</b>.</p>
-    <p>Svaka zagonetka ima točno jedno rješenje. Pazi na riječi koje se čine kao da pripadaju u više skupina! Smiješ pogriješiti najviše četiri puta.</p>
-    <p>Boje idu od najlakše do najteže skupine:</p>
-    <div class="ex"><span class="c0">lagano</span><span class="c1">srednje</span><span class="c2">teže</span><span class="c3">najteže</span></div>
-    <p>Primjer: <b>BURA, JUGO, MAESTRAL, TRAMONTANA</b> su vjetrovi.</p>
-    <div style="text-align:center;margin-top:14px"><button class="btn primary" id="closeHelp">Igraj!</button></div>
-  </div>
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="card"><button class="x" id="modalX" aria-label="Zatvori">×</button><div id="modalBody"></div></div>
 </div>
 
 <script>
+const CFG = Object.assign({supabaseUrl:"",supabaseAnonKey:"",googleLogin:false,paywall:false,checkoutUrl:"",price:"1,99 € mjesečno",siteUrl:""}, window.POVEZNICE_CONFIG||{});
+const SITE = CFG.siteUrl || (location.origin + location.pathname);
 const EMOJI = ["🟨","🟩","🟦","🟪"];
 const MAX_MISTAKES = 4;
 const REVIEW = location.hash === "#pregled";
 
 const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const store = {
   get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
-  set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+  set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} },
+  keys(){ try{ return Object.keys(localStorage); }catch(e){ return []; } }
 };
 const pad = n => String(n).padStart(2,"0");
 const isoOf = d => d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
 const fromIso = s => { const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); };
-function prevIso(s){ const d=fromIso(s); d.setDate(d.getDate()-1); return isoOf(d); }
+const prevIso = s => { const d=fromIso(s); d.setDate(d.getDate()-1); return isoOf(d); };
 function seeded(str){ let h=2166136261; for(const c of str){ h^=c.charCodeAt(0); h=Math.imul(h,16777619);} return ()=>{ h=Math.imul(h^(h>>>15),2246822507)>>>0; h=Math.imul(h^(h>>>13),3266489909)>>>0; return ((h^=h>>>16)>>>0)/4294967296; }; }
 function shuffle(arr,rnd=Math.random){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
 
-let ALL = {};          // datum -> zagonetka
-let DATES = [];        // svi datumi, sortirani
-let today = isoOf(new Date());
+let ALL = {}, DATES = [], today = isoOf(new Date());
 let cur, puzzle, state;
 
+// ---------------- Prijava (Supabase) ----------------
+let sb = null, user = null, profile = null, serverResults = null;
+const AUTH_ON = () => !!sb;
+const isSubscriber = () => !!(profile && profile.subscriber_until && new Date(profile.subscriber_until) > new Date());
+const isLocked = d => CFG.paywall && !REVIEW && d < today && !isSubscriber();
+
+function loadScript(src){ return new Promise((ok,fail)=>{ const s=document.createElement("script"); s.src=src; s.onload=ok; s.onerror=fail; document.head.appendChild(s); }); }
+
+async function initAuth(){
+  if(!CFG.supabaseUrl || !CFG.supabaseAnonKey) return;
+  try{
+    if(!window.supabase) await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js");
+    sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseAnonKey);
+  }catch(e){ console.warn("Prijava nije dostupna", e); return; }
+  $("accountBtn").hidden = false; $("lbBtn").hidden = false;
+  const { data } = await sb.auth.getSession();
+  await setUser(data && data.session ? data.session.user : null);
+  sb.auth.onAuthStateChange((_e, s) => { const u = s ? s.user : null; if((u&&u.id)!==(user&&user.id)) setUser(u); });
+}
+
+async function setUser(u){
+  user = u; profile = null; serverResults = null;
+  if(user){
+    const { data } = await sb.from("profiles").select("nickname,friend_code,subscriber_until").eq("id", user.id).maybeSingle();
+    profile = data;
+    await uploadLocalResults();
+    await fetchServerResults();
+    const pending = store.get("pov-pending-friend");
+    if(pending){ store.set("pov-pending-friend", null); addFriend(pending); }
+  }
+  $("accountBtn").textContent = user ? "👤" : "Prijava";
+  $("accountBtn").classList.toggle("fill", !user);
+  if(VISIBLE.length) buildArchive();
+  if(cur) load(cur);
+}
+
+function localFinished(){
+  return store.keys().filter(k=>/^pov-\d{4}-\d{2}-\d{2}$/.test(k)).map(k=>{
+    const s = store.get(k); return s && s.done ? { puzzle_date:k.slice(4), won:!!s.won, mistakes:s.mistakes, guesses:s.guesses.map(g=>g.colors) } : null;
+  }).filter(Boolean);
+}
+async function uploadLocalResults(){
+  const rows = localFinished().filter(r=>r.puzzle_date<=today).map(r=>({...r, user_id:user.id}));
+  if(rows.length) await sb.from("results").upsert(rows, { onConflict:"user_id,puzzle_date", ignoreDuplicates:true });
+}
+async function fetchServerResults(){
+  const { data } = await sb.from("results").select("puzzle_date,won,mistakes").order("puzzle_date");
+  serverResults = data || [];
+}
+async function saveResult(){
+  if(!user || REVIEW) return;
+  const row = { user_id:user.id, puzzle_date:cur, won:!!state.won, mistakes:state.mistakes, guesses:state.guesses.map(g=>g.colors) };
+  await sb.from("results").upsert(row, { onConflict:"user_id,puzzle_date", ignoreDuplicates:true });
+  await fetchServerResults();
+}
+
+async function addFriend(code){
+  if(!user){ store.set("pov-pending-friend", code); openLogin("Prijavi se da dodaš prijatelja."); return; }
+  const { data, error } = await sb.rpc("add_friend", { p_code: code });
+  toast(error ? cleanErr(error) : "Dodan/a prijatelj/ica: " + data);
+}
+const cleanErr = e => (e && e.message ? e.message : "Greška").replace(/^.*exception: /i,"");
+
+// ---------------- Statistika ----------------
+function computeStats(rows){
+  rows = rows.filter(r=>r.puzzle_date<=today).sort((a,b)=>a.puzzle_date<b.puzzle_date?-1:1);
+  const played = rows.length, won = rows.filter(r=>r.won).length;
+  const dist = [0,0,0,0,0]; rows.forEach(r=>{ if(r.won) dist[Math.min(r.mistakes,4)]++; });
+  let best=0, run=0, prev=null;
+  rows.forEach(r=>{ run = (r.won && prev && prevIso(r.puzzle_date)===prev.puzzle_date && prev.won) ? run+1 : (r.won?1:0); best=Math.max(best,run); prev=r; });
+  let streak=0; const byDate = Object.fromEntries(rows.map(r=>[r.puzzle_date,r]));
+  let d = byDate[today] ? today : prevIso(today);
+  while(byDate[d] && byDate[d].won){ streak++; d = prevIso(d); }
+  return { played, won, pct: played?Math.round(won/played*100):0, streak, best, dist };
+}
+const myStats = () => computeStats(user && serverResults ? serverResults : localFinished());
+
+function statsHtml(){
+  const s = myStats(), max = Math.max(1,...s.dist);
+  return "<div class='stats'><div><b>"+s.played+"</b><span>odigrano</span></div><div><b>"+s.pct+"%</b><span>pobjeda</span></div><div><b>"+s.streak+"</b><span>niz</span></div><div><b>"+s.best+"</b><span>najduži niz</span></div></div>"+
+    "<div class='dist'><div class='muted'>Pobjede po broju pogrešaka</div>"+
+    s.dist.map((n,i)=>"<div><span style='width:16px'>"+i+"</span><i style='width:"+Math.max(8,n/max*100)+"%'>"+n+"</i></div>").join("")+"</div>";
+}
+function openStats(){
+  openModal("<h2>Statistika</h2>"+statsHtml()+
+    (AUTH_ON() && !user ? "<p class='muted' style='text-align:center'>Statistika je spremljena samo u ovom pregledniku. <a href='#' id='statsLogin'>Prijavi se</a> da je imaš na svim uređajima.</p>" : ""));
+  const l=$("statsLogin"); if(l) l.onclick=e=>{e.preventDefault();openLogin();};
+}
+
+// ---------------- Modali ----------------
+function openModal(html){ $("modalBody").innerHTML = html; $("modal").classList.add("open"); }
+function closeModal(){ $("modal").classList.remove("open"); }
+$("modalX").onclick = closeModal;
+$("modal").onclick = e => { if(e.target.id==="modal") closeModal(); };
+document.addEventListener("keydown", e => { if(e.key==="Escape") closeModal(); });
+
+function openHelp(){
+  openModal("<h2>Kako se igra</h2><p>Pronađi skupine od četiri riječi koje imaju nešto zajedničko. Odaberi četiri riječi i klikni <b>Provjeri</b>.</p>"+
+    "<p>Svaka zagonetka ima točno jedno rješenje. Pazi na riječi koje se čine kao da pripadaju u više skupina! Smiješ pogriješiti najviše četiri puta.</p>"+
+    "<p>Boje idu od najlakše do najteže skupine:</p><div class='ex'><span class='c0'>lagano</span><span class='c1'>srednje</span><span class='c2'>teže</span><span class='c3'>najteže</span></div>"+
+    "<p>Primjer: <b>BURA, JUGO, MAESTRAL, TRAMONTANA</b> su vjetrovi.</p><div style='text-align:center;margin-top:14px'><button class='btn primary' id='goPlay'>Igraj!</button></div>");
+  $("goPlay").onclick = closeModal;
+}
+
+function openLogin(note){
+  openModal("<h2>Prijava</h2>"+(note?"<p>"+esc(note)+"</p>":"")+
+    "<p>Prijavom čuvaš statistiku na svim uređajima, natječeš se s prijateljima i dobivaš pristup arhivi.</p>"+
+    (CFG.googleLogin ? "<button class='btn primary' id='gLogin' style='width:100%'>Prijava Google računom</button><p class='muted' style='text-align:center;margin:10px 0'>ili e-mailom</p>" : "")+
+    "<form id='mailForm'><input type='email' id='mail' placeholder='tvoja@email.adresa' required autocomplete='email'>"+
+    "<button class='btn "+(CFG.googleLogin?"":"primary")+"' style='width:100%'>Pošalji mi poveznicu za prijavu</button></form>"+
+    "<p class='muted'>Na e-mail stiže poveznica; klikom na nju si prijavljen/a. Lozinka nije potrebna.</p>");
+  const redirect = location.origin + location.pathname;
+  if($("gLogin")) $("gLogin").onclick = () => sb.auth.signInWithOAuth({ provider:"google", options:{ redirectTo: redirect } });
+  $("mailForm").onsubmit = async e => {
+    e.preventDefault();
+    const { error } = await sb.auth.signInWithOtp({ email: $("mail").value.trim(), options:{ emailRedirectTo: redirect } });
+    if(error) toast(cleanErr(error));
+    else $("modalBody").innerHTML = "<h2>Provjeri e-mail 📬</h2><p>Poslali smo ti poveznicu za prijavu na <b>"+esc($("mail").value)+"</b>. Otvori je na ovom uređaju.</p><p class='muted'>Ne vidiš poruku? Pogledaj mapu neželjene pošte.</p>";
+  };
+}
+
+function openAccount(){
+  if(!user) return openLogin();
+  const invite = SITE + "?prijatelj=" + (profile ? profile.friend_code : "");
+  const subLine = isSubscriber()
+    ? "<p>✅ Pretplata aktivna do <b>"+new Date(profile.subscriber_until).toLocaleDateString("hr-HR")+"</b>.</p>"
+    : (CFG.paywall ? "<p>Arhiva starijih zagonetki dostupna je uz pretplatu ("+esc(CFG.price)+").</p><button class='btn primary' id='subBtn'>Otključaj arhivu</button>" : "");
+  openModal("<h2>Moj račun</h2><p class='muted'>"+esc(user.email||"")+"</p>"+
+    "<label><b>Nadimak</b> (vidi se na ljestvici)</label><div class='row'><input id='nick' maxlength='20' value='"+esc(profile?profile.nickname:"")+"'><button class='btn small' id='nickSave'>Spremi</button></div>"+
+    "<p style='margin-top:16px'><b>Tvoj kod za prijatelje:</b> <span style='font:800 1.2rem monospace'>"+esc(profile?profile.friend_code:"–")+"</span></p>"+
+    "<button class='btn small' id='inviteBtn'>Pošalji pozivnicu prijatelju</button>"+
+    "<p style='margin-top:16px'><b>Dodaj prijatelja po kodu</b></p><div class='row'><input id='fcode' maxlength='6' placeholder='npr. A1B2C3' style='text-transform:uppercase'><button class='btn small' id='fAdd'>Dodaj</button></div>"+
+    (subLine ? "<hr style='border:none;border-top:1px solid var(--line);margin:16px 0'>"+subLine : "")+
+    "<hr style='border:none;border-top:1px solid var(--line);margin:16px 0'><button class='btn small' id='logout'>Odjava</button>");
+  $("nickSave").onclick = async () => {
+    const { data, error } = await sb.rpc("set_nickname", { p_nick: $("nick").value });
+    if(error) toast(cleanErr(error)); else { profile.nickname = data; toast("Nadimak spremljen"); }
+  };
+  $("inviteBtn").onclick = () => shareText("Igraj Poveznice sa mnom! Dodaj me kao prijatelja: " + invite, invite, "Poveznice – pozivnica");
+  $("fAdd").onclick = () => { const c=$("fcode").value.trim(); if(c) addFriend(c); };
+  $("logout").onclick = async () => { await sb.auth.signOut(); closeModal(); toast("Odjavljen/a si"); };
+  if($("subBtn")) $("subBtn").onclick = startCheckout;
+}
+
+function startCheckout(){
+  if(!user) return openLogin("Prijavi se da otključaš arhivu.");
+  if(!CFG.checkoutUrl){ toast("Pretplata još nije dostupna."); return; }
+  const u = new URL(CFG.checkoutUrl);
+  u.searchParams.set("checkout[custom][user_id]", user.id);
+  if(user.email) u.searchParams.set("checkout[email]", user.email);
+  location.href = u.toString();
+}
+
+let lbScope = "friends";
+async function openLeaderboard(){
+  if(!user) return openLogin("Prijavi se da vidiš ljestvicu i natječeš se s prijateljima.");
+  openModal("<h2>Ljestvica · "+esc(fmtShort(cur))+"</h2><div class='tabs'><button class='btn small' data-s='friends'>Prijatelji</button><button class='btn small' data-s='all'>Svi</button></div><div id='lbBody' class='muted'>Učitavam…</div>");
+  const { data, error } = await sb.rpc("leaderboard", { p_date: cur });
+  const draw = () => {
+    document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on", b.dataset.s===lbScope));
+    if(error){ $("lbBody").textContent = cleanErr(error); return; }
+    const rows = (data||[]).filter(r => lbScope==="all" || r.is_friend || r.is_me);
+    if(!rows.length){ $("lbBody").innerHTML = lbScope==="friends" ? "Još nitko od prijatelja nije riješio ovu zagonetku. Pozovi ih u <b>Moj račun</b>!" : "Još nitko nije riješio ovu zagonetku."; return; }
+    $("lbBody").innerHTML = "<table class='lb'>"+rows.map((r,i)=>"<tr class='"+(r.is_me?"me":"")+"'><td>"+(i+1)+".</td><td>"+esc(r.nickname)+(r.is_friend?" 🤝":"")+"</td><td>"+(r.won?"✅ "+r.mistakes+" pogr.":"❌")+"</td><td class='muted'>"+new Date(r.finished_at).toLocaleTimeString("hr-HR",{hour:"2-digit",minute:"2-digit"})+"</td></tr>").join("")+"</table>";
+  };
+  document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{ lbScope=b.dataset.s; draw(); });
+  draw();
+}
+
+// ---------------- Igra ----------------
 async function init(){
+  const authReady = initAuth();
   try{
     const months = await (await fetch("zagonetke/popis.json",{cache:"no-cache"})).json();
     const files = await Promise.all(months.map(m=>fetch("zagonetke/"+m+".json",{cache:"no-cache"}).then(r=>r.json())));
     files.forEach(f=>Object.assign(ALL,f));
   }catch(e){
-    $("board").innerHTML='<div class="msg" style="grid-column:1/-1">Zagonetke se nisu učitale. Pokušaj ponovno kasnije.</div>';
+    $("board").innerHTML='<div class="msg">Zagonetke se nisu učitale. Pokušaj ponovno kasnije.</div>';
     return;
   }
   DATES = Object.keys(ALL).sort();
   const visible = REVIEW ? DATES : DATES.filter(d=>d<=today);
-  if(!visible.length){ $("board").innerHTML='<div class="msg" style="grid-column:1/-1">Prva zagonetka stiže 1. prosinca 2026. Vidimo se!</div>'; return; }
   $("reviewBar").hidden = !REVIEW;
+  if(!visible.length){
+    $("board").innerHTML='<div class="msg">Prva zagonetka stiže '+fmt(DATES[0]||today)+'. Vidimo se!</div>';
+    $("controls").hidden = $("mistakesRow").hidden = true;
+    await authReady; return;
+  }
   buildArchive(visible);
   const start = ALL[today] ? today : visible.filter(d=>d<=today).pop() || visible[0];
   $("archive").value = start;
   load(start);
-  if(!store.get("pov-seen")){ $("help").classList.add("open"); store.set("pov-seen",true); }
+  await authReady;
+  const fr = new URLSearchParams(location.search).get("prijatelj");
+  if(fr && AUTH_ON()){ history.replaceState(null,"",location.pathname+location.hash); addFriend(fr); }
+  else if(!store.get("pov-seen")){ openHelp(); store.set("pov-seen",true); }
 }
 
 const numOf = date => DATES.indexOf(date)+1;
-function fmt(date){ return fromIso(date).toLocaleDateString("hr-HR",{day:"numeric",month:"long",year:"numeric"}); }
+const fmt = date => fromIso(date).toLocaleDateString("hr-HR",{day:"numeric",month:"long",year:"numeric"});
+const fmtShort = date => fromIso(date).toLocaleDateString("hr-HR",{day:"numeric",month:"numeric"});
 
 function load(date){
   cur = date; puzzle = ALL[date];
+  $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date);
+  if(isLocked(date)){ renderLocked(); return; }
   const saved = store.get("pov-"+date);
   state = saved || { order: shuffle(puzzle.flatMap(g=>g[1]), seeded(date)), solved: [], guesses: [], mistakes: 0, done: false };
   state.sel = [];
-  $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date);
+  $("intro").hidden = false;
   render();
 }
+
+function renderLocked(){
+  state = null;
+  $("intro").hidden = true; $("controls").hidden = $("mistakesRow").hidden = true; $("end").hidden = true;
+  $("board").innerHTML = "<div class='lock'><b>🔒 Zagonetka iz arhive</b><p>Današnja zagonetka je uvijek besplatna. Starije zagonetke otključavaju se pretplatom ("+esc(CFG.price)+").</p>"+
+    "<button class='btn primary' id='unlockBtn'>"+(user?"Otključaj arhivu":"Prijavi se i otključaj")+"</button><p><a href='#' id='backToday'>← Natrag na današnju</a></p></div>";
+  $("unlockBtn").onclick = startCheckout;
+  $("backToday").onclick = e => { e.preventDefault(); const d = ALL[today]?today:DATES.filter(x=>x<=today).pop(); $("archive").value=d; load(d); };
+}
+
 function save(){ const {sel,...rest}=state; store.set("pov-"+cur,rest); }
 
 function render(){
@@ -193,11 +418,11 @@ function toggle(w){
   render();
 }
 
-function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),1800); }
+function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2200); }
 
 let busy=false;
 function submit(){
-  if(busy) return;
+  if(busy || !state) return;
   const sel = state.sel.slice().sort();
   const key = sel.join("|");
   if(state.guesses.some(g=>g.key===key)){ toast("To si već pokušao/la!"); return; }
@@ -227,54 +452,69 @@ function submit(){
 function finish(won){
   state.done = true; state.won = won; state.sel = [];
   if(!won){ for(let i=0;i<4;i++) if(!state.solved.includes(i)) state.solved.push(i); }
-  if(cur===today && !REVIEW){
-    const st = store.get("pov-stats2") || {played:0,won:0,streak:0,best:0,last:null};
-    if(st.last!==cur){
-      st.played++;
-      if(won){ st.won++; st.streak = (st.last===prevIso(cur)? st.streak:0)+1; st.best=Math.max(st.best,st.streak);} else st.streak=0;
-      st.last=cur; store.set("pov-stats2",st);
-    }
-  }
   save(); render();
   toast(won ? ["Savršeno!","Odlično!","Bravo!","Za dlaku!"][Math.min(state.mistakes,3)] : "Sljedeći put!");
+  saveResult().then(()=>{ if(state && state.done) renderEnd(); });
 }
 
-function shareText(){
+// ---------------- Dijeljenje ----------------
+function resultText(){
   const rows = state.guesses.map(g=>g.colors.map(c=>EMOJI[c]).join("")).join("\n");
-  return "Poveznice #"+numOf(cur)+"\n"+rows+"\n"+location.origin+location.pathname;
+  return "Poveznice #"+numOf(cur)+(state.won?"":" ✗")+"\n"+rows;
+}
+async function shareText(text, url, title){
+  const full = text + (url && !text.includes(url) ? "\n" + url : "");
+  if(navigator.share){
+    try{ await navigator.share({ title: title||"Poveznice", text, url }); return; }
+    catch(e){ if(e && e.name==="AbortError") return; }
+  }
+  try{ await navigator.clipboard.writeText(full); toast("Kopirano! Zalijepi gdje želiš."); }
+  catch(e){ toast("Kopiranje nije uspjelo"); }
 }
 
 function renderEnd(){
   const e = $("end");
-  if(!state.done){ e.hidden=true; return; }
+  if(!state || !state.done){ e.hidden=true; return; }
   e.hidden=false;
-  const st = store.get("pov-stats2") || {played:0,won:0,streak:0,best:0};
+  const text = resultText(), full = text+"\n"+SITE;
   e.innerHTML = "<h2>"+(state.won?"Riješeno!":"Više sreće sutra!")+"</h2>"+
     "<div class='grid-emoji'>"+state.guesses.map(g=>g.colors.map(c=>EMOJI[c]).join("")).join("<br>")+"</div>"+
-    "<div class='stats'><div><b>"+st.played+"</b><span>odigrano</span></div><div><b>"+(st.played?Math.round(st.won/st.played*100):0)+"%</b><span>pobjeda</span></div><div><b>"+st.streak+"</b><span>niz</span></div><div><b>"+st.best+"</b><span>najduži niz</span></div></div>"+
-    "<button class='btn primary' id='shareBtn'>Kopiraj rezultat</button>"+
-    "<p style='color:var(--muted);font-size:.85rem'>Nova zagonetka sutra u ponoć.</p>";
-  $("shareBtn").onclick = ()=>{
-    navigator.clipboard.writeText(shareText()).then(()=>toast("Rezultat kopiran!")).catch(()=>toast("Kopiranje nije uspjelo"));
-  };
+    "<button class='btn primary' id='shareBtn'>📤 Podijeli rezultat</button>"+
+    "<div class='share'>"+
+      "<a class='btn small' target='_blank' rel='noopener' href='https://wa.me/?text="+encodeURIComponent(full)+"'>WhatsApp</a>"+
+      "<a class='btn small' target='_blank' rel='noopener' href='https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SITE)+"'>Facebook</a>"+
+      "<a class='btn small' target='_blank' rel='noopener' href='https://x.com/intent/post?text="+encodeURIComponent(full)+"'>X</a>"+
+      "<button class='btn small' id='copyBtn'>Kopiraj</button>"+
+    "</div>"+statsHtml()+
+    (AUTH_ON() ? (user ? "<button class='btn small' id='endLb'>🏆 Ljestvica</button>" : "<p class='muted'><a href='#' id='endLogin'>Prijavi se</a> da spremiš statistiku i natječeš se s prijateljima.</p>") : "")+
+    "<p class='muted'>Nova zagonetka sutra u ponoć.</p>";
+  $("shareBtn").onclick = ()=>shareText(text, SITE, "Poveznice #"+numOf(cur));
+  $("copyBtn").onclick = ()=>navigator.clipboard.writeText(full).then(()=>toast("Rezultat kopiran!")).catch(()=>toast("Kopiranje nije uspjelo"));
+  if($("endLb")) $("endLb").onclick = openLeaderboard;
+  if($("endLogin")) $("endLogin").onclick = ev=>{ ev.preventDefault(); openLogin(); };
 }
 
+let VISIBLE = [];
 function buildArchive(list){
-  const s = $("archive");
-  list.slice().reverse().forEach(d=>{
+  if(list) VISIBLE = list;
+  const s = $("archive"), keep = s.value;
+  s.innerHTML = "";
+  VISIBLE.slice().reverse().forEach(d=>{
     const o=document.createElement("option"); o.value=d;
-    o.textContent = "#"+numOf(d)+(d===today?" (danas)":" · "+fromIso(d).toLocaleDateString("hr-HR",{day:"numeric",month:"numeric"}));
+    o.textContent = "#"+numOf(d)+(d===today?" (danas)":" · "+fmtShort(d))+(isLocked(d) ? " 🔒" : "");
     s.appendChild(o);
   });
+  if(keep) s.value = keep;
   s.onchange = ()=>load(s.value);
 }
 
-$("shuffleBtn").onclick = ()=>{ state.order = shuffle(state.order); save(); render(); };
-$("clearBtn").onclick = ()=>{ state.sel=[]; render(); };
+$("shuffleBtn").onclick = ()=>{ if(!state) return; state.order = shuffle(state.order); save(); render(); };
+$("clearBtn").onclick = ()=>{ if(!state) return; state.sel=[]; render(); };
 $("submitBtn").onclick = submit;
-$("helpBtn").onclick = ()=>$("help").classList.add("open");
-$("closeHelp").onclick = ()=>$("help").classList.remove("open");
-$("help").onclick = e=>{ if(e.target.id==="help") $("help").classList.remove("open"); };
+$("helpBtn").onclick = openHelp;
+$("statsBtn").onclick = openStats;
+$("lbBtn").onclick = openLeaderboard;
+$("accountBtn").onclick = openAccount;
 window.addEventListener("hashchange",()=>location.reload());
 
 init();

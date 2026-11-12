@@ -7,7 +7,11 @@ Hrvatska dnevna igra riječi: 16 riječi, 4 skupine, jedna nova zagonetka svaki 
 | Datoteka | Čemu služi |
 |---|---|
 | `index.html` | Igra (cijela, u jednoj datoteci) |
-| `privatnost.html` | Pravila privatnosti (popuni polja u [ZAGRADAMA]) |
+| `privatnost.html` | Pravila privatnosti |
+| `config.js` | Postavke: Supabase (prijava), plaćena arhiva, adresa igre |
+| `og.png` | Slika koja se prikazuje kad se poveznica podijeli |
+| `supabase/` | Baza za prijavu, ljestvicu i pretplatu (`shema.sql`) i webhook za naplatu |
+| `POSTAVLJANJE_PRIJAVE.md` | Upute za uključivanje prijave, ljestvice i pretplate |
 | `zagonetke/popis.json` | Popis mjeseci koje igra učitava |
 | `zagonetke/GGGG-MM.json` | Zagonetke za jedan mjesec |
 | `testovi/provjeri.mjs` | Automatski testovi zagonetki |
