@@ -117,7 +117,7 @@
     </div>
   </header>
 
-  <div class="review" id="reviewBar" hidden>Način pregleda: vidiš i buduće zagonetke. Igrači ih ne vide.</div>
+  <div class="review" id="reviewBar" hidden>Način pregleda: vidiš i buduće zagonetke. Igrači ih ne vide.<br><button class="btn small" id="resetBtn" style="margin-top:6px">↺ Igraj ovu ponovno</button> <button class="btn small" id="resetAllBtn" style="margin-top:6px">Obriši sav moj napredak</button></div>
   <p class="intro" id="intro">Složi četiri skupine od po četiri riječi!</p>
   <div class="board" id="board"><div class="msg">Učitavam zagonetku…</div></div>
 
@@ -374,7 +374,10 @@ function load(date){
   $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date)+" · "+starsOf(date);
   $("dateLabel").title = "Težina: "+LEVEL_NAME[levelOf(date)];
   if(isLocked(date)){ renderLocked(); return; }
-  const saved = store.get("pov-"+date);
+  let saved = store.get("pov-"+date);
+  // Ako je zagonetka u međuvremenu promijenjena, stari spremljeni napredak se odbacuje.
+  const words = puzzle.flatMap(g=>g[1]).slice().sort().join("|");
+  if(saved && (!saved.order || saved.order.slice().sort().join("|") !== words)) saved = null;
   state = saved || { order: shuffle(puzzle.flatMap(g=>g[1]), seeded(date)), solved: [], guesses: [], mistakes: 0, done: false };
   state.sel = [];
   $("intro").hidden = false;
@@ -515,6 +518,8 @@ function buildArchive(list){
   s.onchange = ()=>load(s.value);
 }
 
+$("resetBtn").onclick = ()=>{ try{ localStorage.removeItem("pov-"+cur); }catch(e){} load(cur); toast("Zagonetka je vraćena na početak"); };
+$("resetAllBtn").onclick = ()=>{ store.keys().filter(k=>k.startsWith("pov-")).forEach(k=>{ try{ localStorage.removeItem(k); }catch(e){} }); load(cur); toast("Sav napredak je obrisan"); };
 $("shuffleBtn").onclick = ()=>{ if(!state) return; state.order = shuffle(state.order); save(); render(); };
 $("clearBtn").onclick = ()=>{ if(!state) return; state.sel=[]; render(); };
 $("submitBtn").onclick = submit;
