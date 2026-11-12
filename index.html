@@ -374,7 +374,10 @@ function load(date){
   $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date)+" · "+starsOf(date);
   $("dateLabel").title = "Težina: "+LEVEL_NAME[levelOf(date)];
   if(isLocked(date)){ renderLocked(); return; }
-  const saved = store.get("pov-"+date);
+  let saved = store.get("pov-"+date);
+  // Ako je zagonetka u međuvremenu promijenjena, stari spremljeni napredak se odbacuje.
+  const words = puzzle.flatMap(g=>g[1]).slice().sort().join("|");
+  if(saved && (!saved.order || saved.order.slice().sort().join("|") !== words)) saved = null;
   state = saved || { order: shuffle(puzzle.flatMap(g=>g[1]), seeded(date)), solved: [], guesses: [], mistakes: 0, done: false };
   state.sel = [];
   $("intro").hidden = false;
