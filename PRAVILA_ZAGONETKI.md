@@ -8,7 +8,13 @@ Ova pravila vrijede za svaku novu zagonetku, bez obzira radi li je čovjek ili C
 - Riječi pisati VELIKIM SLOVIMA, hrvatskim pravopisom, bez razmaka, najviše 13 slova.
 - Datoteka: `zagonetke/GGGG-MM.json`, ključ je datum (`"2026-12-01"`), a mjesec se upisuje u `zagonetke/popis.json`.
 
-## Zamke (najvažnije)
+## Zamke (najvažnije) – zagonetke trebaju biti TEŠKE
+- Struktura ostaje 3 obične skupine + 1 ljubičasta (igra riječima), ali **i obične skupine moraju biti lukave**.
+- Svaka zagonetka mora imati **najmanje 3 zamke** (riječi koje izgledaju kao da pripadaju drugoj skupini).
+- Barem jedna skupina treba imati **5–6 kandidata**, od kojih su samo 4 pravi (npr. 6 riječi izgleda kao otoci, a dva "otoka" zapravo pripadaju skupini "unatrag daju novu riječ").
+- Često koristi **lažnu skupinu**: 4 riječi koje izgledaju kao očita skupina (npr. LAMA, PAS, LEOPARD, ZEBRA = "životinje"), a zapravo su raspoređene u druge skupine.
+- Zamke se trebaju "lančano" razrješavati: igrač mora riješiti jednu skupinu da bi znao kamo ide sporna riječ.
+- Primjer (1. 12. 2026.): ZVIJEZDA (ukras ili svemir?), MIR (svemirska postaja ili RIM unatrag?), RAB i VIS (otoci ili BAR i SIV unatrag?).
 - Svaka zagonetka mora imati **barem jednu zamku**: riječ koja izgleda kao da pripada drugoj skupini.
   - Primjer: otoci KRK, HVAR, BRAČ, PAG + skupina "unatrag daju novu riječ" RAB, VIS, TOP, MIR. RAB i VIS izgledaju kao otoci.
 - Zamka smije zbuniti, ali **rješenje mora biti jedinstveno**. Ako zamka stvarno pripada u dvije skupine, druga skupina mora već imati 4 jasnija člana, tako da postoji samo jedna ispravna podjela.
