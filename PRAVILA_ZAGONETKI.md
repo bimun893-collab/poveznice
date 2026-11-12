@@ -8,6 +8,17 @@ Ova pravila vrijede za svaku novu zagonetku, bez obzira radi li je čovjek ili C
 - Riječi pisati VELIKIM SLOVIMA, hrvatskim pravopisom, bez razmaka, najviše 13 slova.
 - Datoteka: `zagonetke/GGGG-MM.json`, ključ je datum (`"2026-12-01"`), a mjesec se upisuje u `zagonetke/popis.json`.
 
+## Težina po danu u tjednu (obavezno)
+Igra uz datum prikazuje zvjezdice prema danu u tjednu, pa zagonetka mora odgovarati toj težini:
+
+| Dan | Oznaka | Sastav |
+|---|---|---|
+| ponedjeljak, utorak | ⭐ | 3 obične skupine (sa zamkama) + 1 igra riječima |
+| srijeda, četvrtak | ⭐⭐ | 2 obične + 2 igre riječima |
+| petak, subota, nedjelja | ⭐⭐⭐ | 2 obične + 2 igre riječima; svaka obična skupina ima 5–7 kandidata, zamke povezane u lanac |
+
+Skupine igre riječima uvijek su na 3. i 4. mjestu (plava i ljubičasta). Iste vrste igre riječima (npr. "unatrag", "kriju ___", "___ kava") ne ponavljati više od dvaput u mjesecu.
+
 ## Zamke (najvažnije) – zagonetke trebaju biti TEŠKE
 - Struktura ostaje 3 obične skupine + 1 ljubičasta (igra riječima), ali **i obične skupine moraju biti lukave**.
 - Svaka zagonetka mora imati **najmanje 3 zamke** (riječi koje izgledaju kao da pripadaju drugoj skupini).

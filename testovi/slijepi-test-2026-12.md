@@ -20,3 +20,13 @@ Za ručni pregled (nije greška, ali provjeri):
 Pojačane zamke u zagonetkama za 1., 3., 5., 6., 8., 13., 14. i 16. prosinca. Slijepi rješavač ni u jednoj nije našao drugu valjanu podjelu.
 - 6. i 16. 12.: rješavač nije prepoznao ljubičastu skupinu (početna nota; "pustiti ___"). To je očekivano za najtežu skupinu.
 - 1. 12.: MIR kao svemirska postaja je namjerna zamka (svi će ga prvo staviti u "unatrag" kao RIM).
+
+## Treći krug (težina po danima, 12. 11. 2026.)
+
+22 zagonetke za srijede–nedjelje prepravljene su na 2 skupine igre riječima. Slijepi rješavač nije našao nijednu drugu valjanu podjelu. Ispravljena slaba mjesta:
+- 2. 12.: ZIDAR → TESAR (da se ZIDAR ne ponavlja 30. 12.)
+- 10. 12.: JASEN → DRAGO (poznatije ime), OSAMA → KOSAČ
+- 16. 12.: DELTAPLAN → MIKROFON (skriveno MI), PARA → GOLUB
+- 23. 12.: BOŽIĆNI → CRNI (kruh), ZAMORAC → PERIOD, oznaka "Probni ___"
+- 26. 12.: BLUZA → DŽEZVA (skriveni DŽEZ)
+- 30. 12.: KAMEN, KLJUČ → ZUB, ZID (ZUBAR, ZIDAR)

@@ -15,36 +15,36 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-02
 
-- 🟨 **Dijelovi bicikla**: LANAC, PEDALA, SJEDALO, KOTAČ
-- 🟩 **Šahovske figure**: DAMA, LOVAC, PJEŠAK, SKAKAČ
-- 🟦 **Zanimanja**: RIBAR, PASTIR, KOVAČ, ZIDAR
-- 🟪 **Kriju dio tijela**: PRSTEN, VRATAR, ZUBATAC, NOSAČ
+- 🟨 **Šahovske figure**: DAMA, LOVAC, SKAKAČ, PJEŠAK
+- 🟩 **Zanimanja**: RIBAR, KOVAČ, TESAR, PASTIR
+- 🟦 **Kriju dio tijela**: PRSTEN, VRATAR, ZUBATAC, NOSAČ
+- 🟪 **K + riječ = nova riječ**: ROV, RAJ, OSA, RILO
 
 - [ ] pregledano
 
 ## 2026-12-03
 
-- 🟨 **Mliječni proizvodi**: SIR, JOGURT, VRHNJE, KEFIR
-- 🟩 **Kartaške boje**: HERC, PIK, TREF, KARO
-- 🟦 **Uzorci na tkanini**: PRUGE, TOČKICE, LEOPARD, ZEBRA
-- 🟪 **S + riječ = nova riječ**: LAVA, VILA, PAS, LAMA
+- 🟨 **Kartaške boje**: HERC, PIK, TREF, KARO
+- 🟩 **Uzorci na tkanini**: PRUGE, TOČKICE, LEOPARD, ZEBRA
+- 🟦 **Morski ___**: JEŽ, KONJIC, KRASTAVAC, PAS
+- 🟪 **S + riječ = nova riječ**: LAVA, VILA, LAMA, PORT
 
 - [ ] pregledano
 
 ## 2026-12-04
 
-- 🟨 **Pecivo**: KIFLA, PEREC, ŠTRUCA, BAGETA
-- 🟩 **Građevine**: KUĆA, DVORAC, TORANJ, PAGODA
-- 🟦 **Dječje igre**: ŠKOLICA, SKRIVAČA, LASTIK, LOVICE
-- 🟪 **Kriju hrvatski otok**: VISOKO, GRABLJE, BRAČNI, VIRUS
+- 🟨 **Građevine**: DVORAC, TORANJ, PAGODA, KULA
+- 🟩 **Ptice**: GALEB, RODA, LASTAVICA, KOS
+- 🟦 **Unatrag daju novu riječ**: ŽAR, DAR, SIR, KAP
+- 🟪 **Kriju hrvatski otok**: VISOKO, BRAČNI, VIRUS, VRABAC
 
 - [ ] pregledano
 
 ## 2026-12-05
 
-- 🟨 **U učionici**: PLOČA, KREDA, SPUŽVA, KATEDRA
-- 🟩 **Planeti**: ZEMLJA, URAN, MARS, SATURN
-- 🟦 **Rimski bogovi**: VESTA, AMOR, MINERVA, DIJANA
+- 🟨 **Planeti**: ZEMLJA, URAN, MARS, SATURN
+- 🟩 **Rimski bogovi**: VESTA, AMOR, MINERVA, DIJANA
+- 🟦 **___ sustav**: SUNČEVI, ŽIVČANI, OPERACIJSKI, ŠKOLSKI
 - 🟪 **Bez prvog slova daju novu riječ**: BRAK, GRAD, ŠKOLA, KLUPA
 
 - [ ] pregledano
@@ -52,8 +52,8 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-06
 
 - 🟨 **Obuća**: ČIZMA, PAPUČA, TENISICA, LAKIRANKE
-- 🟩 **Agrumi**: LIMUN, POMELO, GREJP, LIMETA
-- 🟦 **U čizmici za svetog Nikolu**: ČOKOLADA, BOMBON, ŠIBA, MANDARINA
+- 🟩 **U čizmici za svetog Nikolu**: ČOKOLADA, BOMBON, ŠIBA, MANDARINA
+- 🟦 **Kriju broj**: PETLJA, TRIBINA, STOLICA, OSAMLJEN
 - 🟪 **Počinju glazbenom notom**: DOLINA, REPA, MIRIS, FAZAN
 
 - [ ] pregledano
@@ -80,7 +80,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 - 🟨 **Boje**: NARANČASTA, LJUBIČASTA, SIVA, SMEĐA
 - 🟩 **Ronilačka oprema**: MASKA, PERAJE, DISALICA, BOCA
-- 🟦 **Vrste kave**: ESPRESSO, MAKIJATO, KAPUĆINO, BIJELA
+- 🟦 **___ kava**: TURSKA, BIJELA, CRNA, INSTANT
 - 🟪 **___ more**: MRTVO, SJEVERNO, JADRANSKO, CRVENO
 
 - [ ] pregledano
@@ -88,9 +88,9 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-10
 
 - 🟨 **Zvijeri**: MEDVJED, RIS, ČAGALJ, TIGAR
-- 🟩 **Rijeke**: NERETVA, KORANA, MREŽNICA, ZRMANJA
-- 🟦 **Nacionalni parkovi**: PLITVICE, PAKLENICA, RISNJAK, KRKA
-- 🟪 **Riječi koje su i muška imena**: LAV, VUK, JASEN, GORAN
+- 🟩 **Nacionalni parkovi**: PLITVICE, PAKLENICA, RISNJAK, KRKA
+- 🟦 **Kriju životinju**: RAKETA, LAVINA, KOSAČ, MIŠLJENJE
+- 🟪 **Riječi koje su i muška imena**: LAV, VUK, DRAGO, GORAN
 
 - [ ] pregledano
 
@@ -98,25 +98,25 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 - 🟨 **Školski pribor**: OLOVKA, GUMICA, ŠILJILO, RAVNALO
 - 🟩 **Dijelovi e-maila**: PRIMATELJ, PREDMET, PRIVITAK, POTPIS
-- 🟦 **Oblikovanje teksta**: PODEBLJANO, KURZIV, PODCRTANO, PRECRTANO
+- 🟦 **___ mreža**: DRUŠTVENA, RAČUNALNA, RIBARSKA, PAUKOVA
 - 🟪 **Kriju prijevozno sredstvo**: VLAKNO, BUSOLA, METROPOLA, AUTORITET
 
 - [ ] pregledano
 
 ## 2026-12-12
 
-- 🟨 **Pića**: VINO, PIVO, RAKIJA, PELINKOVAC
-- 🟩 **Kuhinjski aparati**: MIKSER, TOSTER, HLADNJAK, PEĆNICA
-- 🟦 **Blagdanski slatkiši**: FRITULE, KROSTULE, MEDENJACI, ORAHNJAČA
+- 🟨 **Kuhinjski aparati**: MIKSER, TOSTER, HLADNJAK, PEĆNICA
+- 🟩 **Blagdanski slatkiši**: FRITULE, KROSTULE, MEDENJACI, ORAHNJAČA
+- 🟦 **___ vino**: KUHANO, PJENUŠAVO, DESERTNO, STOLNO
 - 🟪 **Božićni ___**: SAJAM, POKLON, DOMJENAK, UGOĐAJ
 
 - [ ] pregledano
 
 ## 2026-12-13
 
-- 🟨 **Žitarice**: PŠENICA, JEČAM, ZOB, RAŽ
-- 🟩 **Glazbeni instrumenti**: BUBANJ, TRUBA, FLAUTA, VIOLINA
-- 🟦 **Metalni elementi**: TITAN, OLOVO, KROM, CINK
+- 🟨 **Glazbeni instrumenti**: BUBANJ, TRUBA, FLAUTA, VIOLINA
+- 🟩 **Metalni elementi**: TITAN, OLOVO, KROM, CINK
+- 🟦 **Kriju muško ime**: ANTENA, PIVOVARA, MATEMATIKA, IVANČICA
 - 🟪 **Kriju žensko ime**: PLANINA, PLATINA, KOPRIVA, MARAMA
 
 - [ ] pregledano
@@ -141,27 +141,27 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-16
 
-- 🟨 **Plodovi mora**: KOZICA, LIGNJA, HOBOTNICA, DAGNJA
-- 🟩 **Grčka slova**: ALFA, BETA, GAMA, OMEGA
-- 🟦 **Uz rijeku**: DELTA, UŠĆE, IZVOR, MEANDAR
-- 🟪 **Može se pustiti**: GLAZBA, SUZA, PARA, BALON
+- 🟨 **Grčka slova**: ALFA, BETA, GAMA, OMEGA
+- 🟩 **Uz rijeku**: DELTA, UŠĆE, IZVOR, MEANDAR
+- 🟦 **Kriju grčko slovo**: PSIHOLOG, RESTAURACIJA, CIGARETA, MIKROFON
+- 🟪 **Može se pustiti**: GLAZBA, SUZA, GOLUB, BALON
 
 - [ ] pregledano
 
 ## 2026-12-17
 
-- 🟨 **Dijelovi ručnog sata**: KAZALJKA, BROJČANIK, REMEN, BATERIJA
-- 🟩 **Valute**: EURO, DOLAR, JEN, FRANAK
-- 🟦 **Kune i rođaci**: KUNA, LASICA, VIDRA, TVOR
+- 🟨 **Valute**: EURO, DOLAR, JEN, FRANAK
+- 🟩 **Kune i rođaci**: KUNA, LASICA, VIDRA, TVOR
+- 🟦 **___ sat**: RUČNI, ZIDNI, PJEŠČANI, SUNČANI
 - 🟪 **Riječi koje su i hrvatski gradovi**: RIJEKA, PRELOG, VODICE, KAŠTELA
 
 - [ ] pregledano
 
 ## 2026-12-18
 
-- 🟨 **Planinarska oprema**: ŠATOR, RUKSAK, ČUTURA, KOMPAS
-- 🟩 **Dijelovi broda**: KRMA, PRAMAC, JARBOL, KORMILO
-- 🟦 **Ribolovni pribor**: UDICA, ŠTAP, MREŽA, PLOVAK
+- 🟨 **Dijelovi broda**: KRMA, PRAMAC, JARBOL, KORMILO
+- 🟩 **Ribolovni pribor**: UDICA, ŠTAP, MREŽA, PLOVAK
+- 🟦 **___ ključ**: VIOLINSKI, BASOVSKI, FRANCUSKI, KOMBINIRANI
 - 🟪 **Kriju člana obitelji**: MAMAC, SINDIKAT, BABAROGA, OBRAT
 
 - [ ] pregledano
@@ -170,17 +170,17 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 - 🟨 **Egzotično voće**: ANANAS, MANGO, PAPAJA, KIVI
 - 🟩 **Egzotične ptice**: PINGVIN, NOJ, PAPIGA, TUKAN
-- 🟦 **Geometrijski likovi**: KRUG, KVADRAT, TROKUT, ROMB
-- 🟪 **Vrste kutova**: PRAVI, OŠTRI, TUPI, ISPRUŽENI
+- 🟦 **Vrste kutova**: PRAVI, OŠTRI, TUPI, ISPRUŽENI
+- 🟪 **___ trokut**: BERMUDSKI, LJUBAVNI, PRAVOKUTNI, OŠTROKUTNI
 
 - [ ] pregledano
 
 ## 2026-12-20
 
 - 🟨 **Kod liječnika**: RECEPT, UPUTNICA, TOPLOMJER, PREGLED
-- 🟩 **Nastavci datoteka**: DOCX, XLSX, PDF, JPG
-- 🟦 **Kartice u Wordu**: DATOTEKA, UMETANJE, PRIKAZ, DIZAJN
-- 🟪 **Radni ___**: STAŽ, ODNOS, NALOG, TJEDAN
+- 🟩 **Kartice u Wordu**: DATOTEKA, UMETANJE, PRIKAZ, DIZAJN
+- 🟦 **Radni ___**: STAŽ, ODNOS, NALOG, TJEDAN
+- 🟪 **Kriju dio računala**: DISKONT, RAMPA, ČIPKA, MIŠIĆ
 
 - [ ] pregledano
 
@@ -204,18 +204,18 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-23
 
-- 🟨 **U krevetu**: MADRAC, JASTUK, PLAHTA, POPLUN
-- 🟩 **Kućni ljubimci**: MAČKA, HRČAK, KANARINAC, ČINČILA
-- 🟦 **Božićni običaji**: BADNJAK, SLAMA, JASLICE, ČESNICA
-- 🟪 **Pokusni ___**: ROK, RAD, VOŽNJA, ZAMORAC
+- 🟨 **Kućni ljubimci**: MAČKA, HRČAK, KANARINAC, ČINČILA
+- 🟩 **Božićni običaji**: BADNJAK, SLAMA, JASLICE, ČESNICA
+- 🟦 **___ kruh**: KUKURUZNI, RAŽENI, INTEGRALNI, CRNI
+- 🟪 **Probni ___**: ROK, RAD, VOŽNJA, PERIOD
 
 - [ ] pregledano
 
 ## 2026-12-24
 
 - 🟨 **Ribe za Badnjak**: BAKALAR, ŠARAN, OSLIĆ, SKUŠA
-- 🟩 **Zimzelene biljke**: IMELA, BOŽIKOVINA, JELA, BRŠLJAN
-- 🟦 **U jaslicama**: VOL, MAGARAC, MUDRACI, OVČICE
+- 🟩 **U jaslicama**: VOL, MAGARAC, MUDRACI, OVČICE
+- 🟦 **Riječi koje su i ženska imena**: JELA, NADA, ZORA, DUNJA
 - 🟪 **Životinje koje služe kao uvreda**: TELE, GUSKA, MAJMUN, SVINJA
 
 - [ ] pregledano
@@ -223,17 +223,17 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-25
 
 - 🟨 **Božićni ručak**: PURICA, SARMA, MLINCI, ODOJAK
-- 🟩 **U dnevnoj sobi**: KAUČ, TEPIH, FOTELJA, LUSTER
-- 🟦 **Osiguranje**: POLICA, PREMIJA, ODŠTETA, FRANŠIZA
+- 🟩 **Osiguranje**: POLICA, PREMIJA, ODŠTETA, FRANŠIZA
+- 🟦 **Isto se čitaju unatrag**: KAJAK, RADAR, POTOP, OKO
 - 🟪 **Kriju alkoholno piće**: GRUMEN, ORIGINAL, SPORTOVI, SVINOGOJSTVO
 
 - [ ] pregledano
 
 ## 2026-12-26
 
-- 🟨 **Računske operacije: rezultat**: ZBROJ, RAZLIKA, UMNOŽAK, KOLIČNIK
-- 🟩 **Dijelovi pjesme**: STROFA, STIH, RIMA, REFREN
-- 🟦 **Glagolska vremena**: PREZENT, PERFEKT, FUTUR, AORIST
+- 🟨 **Dijelovi pjesme**: STROFA, STIH, RIMA, REFREN
+- 🟩 **Glagolska vremena**: PREZENT, PERFEKT, FUTUR, AORIST
+- 🟦 **Kriju glazbeni žanr**: DŽEZVA, POPIS, FOLKLOR, RAPSODIJA
 - 🟪 **Kriju državu**: PERUNIKA, MALINA, ČADOR, KATARAKTA
 
 - [ ] pregledano
@@ -241,8 +241,8 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-27
 
 - 🟨 **Dijelovi automobila**: VOLAN, MJENJAČ, KOČNICA, BRISAČ
-- 🟩 **U novinama**: NASLOV, ČLANAK, INTERVJU, KOLUMNA
-- 🟦 **Hrvatska vina**: POŠIP, GRAŠEVINA, TERAN, MALVAZIJA
+- 🟩 **Hrvatska vina**: POŠIP, GRAŠEVINA, TERAN, MALVAZIJA
+- 🟦 **___ vrata**: KLIZNA, RAJSKA, PRTLJAŽNA, ULAZNA
 - 🟪 **Ime dolazi od boje**: PLAVAC, BJELANJAK, ŽUTICA, MODRICA
 
 - [ ] pregledano
@@ -267,18 +267,18 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-30
 
-- 🟨 **Zubi**: SJEKUTIĆ, OČNJAK, KUTNJAK, UMNJAK
-- 🟩 **Društvene igre**: ŠAH, MLIN, DOMINO, BINGO
-- 🟦 **Ekonomija**: INFLACIJA, POREZ, DIONICA, MONOPOL
-- 🟪 **Dodaj -AR i dobiješ zanimanje**: KLJUČ, STOL, LIM, KAMEN
+- 🟨 **Društvene igre**: ŠAH, MLIN, DOMINO, BINGO
+- 🟩 **Ekonomija**: INFLACIJA, POREZ, DIONICA, MONOPOL
+- 🟦 **___ vrijeme**: SLOBODNO, LOŠE, LIJEPO, LJETNO
+- 🟪 **Dodaj -AR i dobiješ zanimanje**: ZID, STOL, LIM, ZUB
 
 - [ ] pregledano
 
 ## 2026-12-31
 
 - 🟨 **Dijelovi dana**: JUTRO, PODNE, VEČER, PONOĆ
-- 🟩 **Horoskopski znakovi**: BIK, BLIZANCI, RIBE, OVAN
-- 🟦 **Doček Nove godine**: VATROMET, ŠAMPANJAC, ODBROJAVANJE, KONFETI
+- 🟩 **Doček Nove godine**: VATROMET, ŠAMPANJAC, ODBROJAVANJE, KONFETI
+- 🟦 **___ godina**: NOVA, PRIJESTUPNA, ŠKOLSKA, SVJETLOSNA
 - 🟪 **Životinje koje su i predmeti**: KONJ, LISICE, PIJETAO, PAUK
 
 - [ ] pregledano
