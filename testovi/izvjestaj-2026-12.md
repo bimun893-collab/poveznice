@@ -6,10 +6,10 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-01
 
-- 🟨 **Svemir**: PLANET, KOMET, ZVIJEZDA, GALAKSIJA
-- 🟩 **Božićni ukrasi**: KUGLA, LAMPICE, ŠIŠARKA, ANĐEO
+- 🟨 **Božićni ukrasi**: KUGLA, LAMPICE, ŠIŠARKA, ZVIJEZDA
+- 🟩 **Svemir**: PLANET, KOMET, GALAKSIJA, MIR
 - 🟦 **Jadranski otoci**: PAG, KORČULA, MLJET, LASTOVO
-- 🟪 **Unatrag daju novu riječ**: RAB, MIR, TOP, LOV
+- 🟪 **Unatrag daju novu riječ**: RAB, VIS, TOP, LOV
 
 - [ ] pregledano
 
@@ -26,7 +26,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 - 🟨 **Mliječni proizvodi**: SIR, JOGURT, VRHNJE, KEFIR
 - 🟩 **Kartaške boje**: HERC, PIK, TREF, KARO
-- 🟦 **Uzorci na tkanini**: PRUGE, TOČKICE, KOCKICE, LEOPARD
+- 🟦 **Uzorci na tkanini**: PRUGE, TOČKICE, LEOPARD, ZEBRA
 - 🟪 **S + riječ = nova riječ**: LAVA, VILA, PAS, LAMA
 
 - [ ] pregledano
@@ -43,7 +43,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-05
 
 - 🟨 **U učionici**: PLOČA, KREDA, SPUŽVA, KATEDRA
-- 🟩 **Planeti**: ZEMLJA, SATURN, URAN, MARS
+- 🟩 **Planeti**: ZEMLJA, URAN, MARS, SATURN
 - 🟦 **Rimski bogovi**: VESTA, AMOR, MINERVA, DIJANA
 - 🟪 **Bez prvog slova daju novu riječ**: BRAK, GRAD, ŠKOLA, KLUPA
 
@@ -51,7 +51,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-06
 
-- 🟨 **Obuća**: ČIZMA, PAPUČA, TENISICA, SANDALA
+- 🟨 **Obuća**: ČIZMA, PAPUČA, TENISICA, LAKIRANKE
 - 🟩 **Agrumi**: LIMUN, POMELO, GREJP, LIMETA
 - 🟦 **U čizmici za svetog Nikolu**: ČOKOLADA, BOMBON, ŠIBA, MANDARINA
 - 🟪 **Počinju glazbenom notom**: DOLINA, REPA, MIRIS, FAZAN
@@ -72,7 +72,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 - 🟨 **Šumske životinje**: JELEN, VJEVERICA, LISICA, JAZAVAC
 - 🟩 **Dijelovi stabla**: KORIJEN, DEBLO, GRANA, LIST
 - 🟦 **Dijelovi knjige**: PREDGOVOR, STRANICA, POGLAVLJE, KAZALO
-- 🟪 **Bez zadnjeg slova daju novu riječ**: KOSA, LUKA, VODA, KUMA
+- 🟪 **Bez zadnjeg slova daju novu riječ**: KOSA, LUKA, VODA, KORA
 
 - [ ] pregledano
 
@@ -115,7 +115,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 ## 2026-12-13
 
 - 🟨 **Žitarice**: PŠENICA, JEČAM, ZOB, RAŽ
-- 🟩 **Glazbeni instrumenti**: BUBANJ, TRUBA, KLAVIR, FLAUTA
+- 🟩 **Glazbeni instrumenti**: BUBANJ, TRUBA, FLAUTA, VIOLINA
 - 🟦 **Metalni elementi**: TITAN, OLOVO, KROM, CINK
 - 🟪 **Kriju žensko ime**: PLANINA, PLATINA, KOPRIVA, MARAMA
 
@@ -123,9 +123,9 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 
 ## 2026-12-14
 
-- 🟨 **Igračke**: LUTKA, ZMAJ, SLAGALICA, ČIGRA
-- 🟩 **U prometu**: SEMAFOR, RASKRIŽJE, PARKIRALIŠTE, TUNEL
-- 🟦 **Afričke životinje**: ŽIRAFA, ANTILOPA, HIJENA, ZEBRA
+- 🟨 **Igračke**: LUTKA, ZMAJ, SLAGALICA, LOPTA
+- 🟩 **Na cesti**: SEMAFOR, PARKIRALIŠTE, TUNEL, AUTOCESTA
+- 🟦 **Afričke životinje**: ŽIRAFA, ANTILOPA, HIJENA, GAZELA
 - 🟪 **Složenice od dvije riječi**: NOSOROG, VODOPAD, ŽIVOTOPIS, KRVOTOK
 
 - [ ] pregledano
@@ -144,7 +144,7 @@ Boje: 🟨 lagano · 🟩 srednje · 🟦 teže · 🟪 najteže
 - 🟨 **Plodovi mora**: KOZICA, LIGNJA, HOBOTNICA, DAGNJA
 - 🟩 **Grčka slova**: ALFA, BETA, GAMA, OMEGA
 - 🟦 **Uz rijeku**: DELTA, UŠĆE, IZVOR, MEANDAR
-- 🟪 **Može se pustiti**: GLAZBA, SUZA, GLAS, BALON
+- 🟪 **Može se pustiti**: GLAZBA, SUZA, PARA, BALON
 
 - [ ] pregledano
 

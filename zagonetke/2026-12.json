@@ -1,21 +1,21 @@
 {
  "2026-12-01": [
   [
-   "Svemir",
-   [
-    "PLANET",
-    "KOMET",
-    "ZVIJEZDA",
-    "GALAKSIJA"
-   ]
-  ],
-  [
    "Božićni ukrasi",
    [
     "KUGLA",
     "LAMPICE",
     "ŠIŠARKA",
-    "ANĐEO"
+    "ZVIJEZDA"
+   ]
+  ],
+  [
+   "Svemir",
+   [
+    "PLANET",
+    "KOMET",
+    "GALAKSIJA",
+    "MIR"
    ]
   ],
   [
@@ -31,7 +31,7 @@
    "Unatrag daju novu riječ",
    [
     "RAB",
-    "MIR",
+    "VIS",
     "TOP",
     "LOV"
    ]
@@ -99,8 +99,8 @@
    [
     "PRUGE",
     "TOČKICE",
-    "KOCKICE",
-    "LEOPARD"
+    "LEOPARD",
+    "ZEBRA"
    ]
   ],
   [
@@ -165,9 +165,9 @@
    "Planeti",
    [
     "ZEMLJA",
-    "SATURN",
     "URAN",
-    "MARS"
+    "MARS",
+    "SATURN"
    ]
   ],
   [
@@ -196,7 +196,7 @@
     "ČIZMA",
     "PAPUČA",
     "TENISICA",
-    "SANDALA"
+    "LAKIRANKE"
    ]
   ],
   [
@@ -299,7 +299,7 @@
     "KOSA",
     "LUKA",
     "VODA",
-    "KUMA"
+    "KORA"
    ]
   ]
  ],
@@ -470,8 +470,8 @@
    [
     "BUBANJ",
     "TRUBA",
-    "KLAVIR",
-    "FLAUTA"
+    "FLAUTA",
+    "VIOLINA"
    ]
   ],
   [
@@ -500,16 +500,16 @@
     "LUTKA",
     "ZMAJ",
     "SLAGALICA",
-    "ČIGRA"
+    "LOPTA"
    ]
   ],
   [
-   "U prometu",
+   "Na cesti",
    [
     "SEMAFOR",
-    "RASKRIŽJE",
     "PARKIRALIŠTE",
-    "TUNEL"
+    "TUNEL",
+    "AUTOCESTA"
    ]
   ],
   [
@@ -518,7 +518,7 @@
     "ŽIRAFA",
     "ANTILOPA",
     "HIJENA",
-    "ZEBRA"
+    "GAZELA"
    ]
   ],
   [
@@ -602,7 +602,7 @@
    [
     "GLAZBA",
     "SUZA",
-    "GLAS",
+    "PARA",
     "BALON"
    ]
   ]

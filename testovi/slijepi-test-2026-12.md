@@ -14,3 +14,9 @@ Za ručni pregled (nije greška, ali provjeri):
 - 10.12. JASEN je kao muško ime manje poznat.
 - 16.12. "pustiti glas" je slabiji izraz od ostalih u skupini.
 - 30.12. KAMENAR je manje poznato zanimanje.
+
+## Drugi krug (teže zagonetke, 12. 11. 2026.)
+
+Pojačane zamke u zagonetkama za 1., 3., 5., 6., 8., 13., 14. i 16. prosinca. Slijepi rješavač ni u jednoj nije našao drugu valjanu podjelu.
+- 6. i 16. 12.: rješavač nije prepoznao ljubičastu skupinu (početna nota; "pustiti ___"). To je očekivano za najtežu skupinu.
+- 1. 12.: MIR kao svemirska postaja je namjerna zamka (svi će ga prvo staviti u "unatrag" kao RIM).
