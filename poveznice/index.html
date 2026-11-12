@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poveznice – dnevna igra povezivanja riječi</title>
+<meta name="description" content="Poveznice: hrvatska dnevna igra riječi. Pronađi četiri skupine od po četiri riječi. Nova zagonetka svaki dan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f1e7; --ink:#1f2a2e; --muted:#6b726f; --tile:#e6dfd0; --tile-sel:#3c4a4f;
+    --g1:#f2c45a; --g2:#8cc084; --g3:#7fb2d6; --g4:#b48ac9; --line:#d8cfbd;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;
+    min-height:100vh;display:flex;justify-content:center}
+  .wrap{width:100%;max-width:620px;padding:20px 14px 40px}
+  header{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:14px}
+  h1{font-family:Fraunces,serif;font-weight:800;font-size:2rem;margin:0;letter-spacing:-.5px}
+  h1 span{display:inline-flex;gap:3px;margin-left:8px;vertical-align:middle}
+  h1 span i{width:10px;height:10px;border-radius:2px;display:block}
+  .meta{font-size:.85rem;color:var(--muted);text-align:right}
+  .meta select{font:inherit;background:transparent;border:1px solid var(--line);border-radius:6px;padding:2px 4px;color:var(--ink);max-width:150px}
+  .icon-btn{background:none;border:2px solid var(--ink);border-radius:50%;width:32px;height:32px;font-weight:800;cursor:pointer;color:var(--ink);margin-left:6px}
+  .intro{text-align:center;margin:6px 0 14px;font-size:1rem}
+  .review{background:#fff3c4;border:1px dashed #c9a43a;border-radius:8px;padding:8px 10px;font-size:.85rem;margin-bottom:12px;text-align:center}
+  .board{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .tile{aspect-ratio:1.45/1;background:var(--tile);border:none;border-radius:8px;font:800 clamp(.58rem,2.5vw,.92rem) "Nunito Sans",sans-serif;
+    color:var(--ink);cursor:pointer;text-transform:uppercase;padding:4px;word-break:break-word;hyphens:auto;transition:transform .12s,background .12s;user-select:none}
+  .tile:active{transform:scale(.95)}
+  .tile.sel{background:var(--tile-sel);color:#fff}
+  .tile.shake{animation:shake .4s}
+  .tile.jump{animation:jump .35s}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+  @keyframes jump{50%{transform:translateY(-10px)}}
+  .solved{grid-column:1/-1;border-radius:8px;padding:12px 8px;text-align:center;animation:pop .35s}
+  .solved b{display:block;font-size:.95rem;text-transform:uppercase;letter-spacing:.5px}
+  .solved small{display:block;font-size:.85rem;margin-top:3px;text-transform:uppercase}
+  @keyframes pop{from{transform:scale(.9);opacity:.3}to{transform:scale(1);opacity:1}}
+  .c0{background:var(--g1)}.c1{background:var(--g2)}.c2{background:var(--g3)}.c3{background:var(--g4)}
+  .mistakes{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 12px;font-size:.95rem}
+  .dot{width:13px;height:13px;border-radius:50%;background:var(--tile-sel);transition:opacity .3s,transform .3s}
+  .dot.gone{opacity:.15;transform:scale(.6)}
+  .controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .btn{font:700 .95rem "Nunito Sans",sans-serif;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn:disabled{opacity:.35;cursor:default}
+  .toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s;z-index:20}
+  .toast.show{opacity:1}
+  .end{margin-top:22px;text-align:center;border-top:1px solid var(--line);padding-top:18px}
+  .end h2{font-family:Fraunces,serif;margin:0 0 6px}
+  .grid-emoji{font-size:1.4rem;line-height:1.25;margin:10px 0;letter-spacing:2px}
+  .stats{display:flex;justify-content:center;gap:22px;margin:12px 0;flex-wrap:wrap}
+  .stats div{text-align:center}.stats b{display:block;font-size:1.5rem;font-family:Fraunces,serif}
+  .stats span{font-size:.75rem;color:var(--muted)}
+  .modal{position:fixed;inset:0;background:rgba(31,42,46,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:30}
+  .modal.open{display:flex}
+  .card{background:var(--bg);border-radius:12px;max-width:440px;padding:22px;line-height:1.5}
+  .card h2{font-family:Fraunces,serif;margin-top:0}
+  .ex{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+  .ex span{padding:3px 8px;border-radius:5px;font-weight:800;font-size:.8rem}
+  .msg{text-align:center;padding:40px 10px;color:var(--muted)}
+  footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:30px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Poveznice<span><i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i></span></h1>
+    <div class="meta">
+      <div id="dateLabel"></div>
+      <div>Arhiva: <select id="archive" aria-label="Arhiva zagonetki"></select><button class="icon-btn" id="helpBtn" aria-label="Pravila">?</button></div>
+    </div>
+  </header>
+
+  <div class="review" id="reviewBar" hidden>Način pregleda: vidiš i buduće zagonetke. Igrači ih ne vide.</div>
+  <p class="intro">Složi četiri skupine od po četiri riječi!</p>
+  <div class="board" id="board"><div class="msg" style="grid-column:1/-1">Učitavam zagonetku…</div></div>
+
+  <div class="mistakes" id="mistakesRow">Preostale pogreške: <span id="dots"></span></div>
+  <div class="controls" id="controls">
+    <button class="btn" id="shuffleBtn">Promiješaj</button>
+    <button class="btn" id="clearBtn">Poništi odabir</button>
+    <button class="btn primary" id="submitBtn" disabled>Provjeri</button>
+  </div>
+
+  <div class="end" id="end" hidden></div>
+  <footer>Nova zagonetka svaki dan u ponoć. · <a href="privatnost.html">Privatnost</a></footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<div class="modal" id="help">
+  <div class="card">
+    <h2>Kako se igra</h2>
+    <p>Pronađi skupine od četiri riječi koje imaju nešto zajedničko. Odaberi četiri riječi i klikni <b>Provjeri</b>.</p>
+    <p>Svaka zagonetka ima točno jedno rješenje. Pazi na riječi koje se čine kao da pripadaju u više skupina! Smiješ pogriješiti najviše četiri puta.</p>
+    <p>Boje idu od najlakše do najteže skupine:</p>
+    <div class="ex"><span class="c0">lagano</span><span class="c1">srednje</span><span class="c2">teže</span><span class="c3">najteže</span></div>
+    <p>Primjer: <b>BURA, JUGO, MAESTRAL, TRAMONTANA</b> su vjetrovi.</p>
+    <div style="text-align:center;margin-top:14px"><button class="btn primary" id="closeHelp">Igraj!</button></div>
+  </div>
+</div>
+
+<script>
+const EMOJI = ["🟨","🟩","🟦","🟪"];
+const MAX_MISTAKES = 4;
+const REVIEW = location.hash === "#pregled";
+
+const $ = id => document.getElementById(id);
+const store = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); }catch(e){} }
+};
+const pad = n => String(n).padStart(2,"0");
+const isoOf = d => d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
+const fromIso = s => { const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); };
+function prevIso(s){ const d=fromIso(s); d.setDate(d.getDate()-1); return isoOf(d); }
+function seeded(str){ let h=2166136261; for(const c of str){ h^=c.charCodeAt(0); h=Math.imul(h,16777619);} return ()=>{ h=Math.imul(h^(h>>>15),2246822507)>>>0; h=Math.imul(h^(h>>>13),3266489909)>>>0; return ((h^=h>>>16)>>>0)/4294967296; }; }
+function shuffle(arr,rnd=Math.random){ const a=arr.slice(); for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]];} return a; }
+
+let ALL = {};          // datum -> zagonetka
+let DATES = [];        // svi datumi, sortirani
+let today = isoOf(new Date());
+let cur, puzzle, state;
+
+async function init(){
+  try{
+    const months = await (await fetch("zagonetke/popis.json",{cache:"no-cache"})).json();
+    const files = await Promise.all(months.map(m=>fetch("zagonetke/"+m+".json",{cache:"no-cache"}).then(r=>r.json())));
+    files.forEach(f=>Object.assign(ALL,f));
+  }catch(e){
+    $("board").innerHTML='<div class="msg" style="grid-column:1/-1">Zagonetke se nisu učitale. Pokušaj ponovno kasnije.</div>';
+    return;
+  }
+  DATES = Object.keys(ALL).sort();
+  const visible = REVIEW ? DATES : DATES.filter(d=>d<=today);
+  if(!visible.length){ $("board").innerHTML='<div class="msg" style="grid-column:1/-1">Prva zagonetka stiže uskoro!</div>'; return; }
+  $("reviewBar").hidden = !REVIEW;
+  buildArchive(visible);
+  const start = ALL[today] ? today : visible.filter(d=>d<=today).pop() || visible[0];
+  $("archive").value = start;
+  load(start);
+  if(!store.get("pov-seen")){ $("help").classList.add("open"); store.set("pov-seen",true); }
+}
+
+const numOf = date => DATES.indexOf(date)+1;
+function fmt(date){ return fromIso(date).toLocaleDateString("hr-HR",{day:"numeric",month:"long",year:"numeric"}); }
+
+function load(date){
+  cur = date; puzzle = ALL[date];
+  const saved = store.get("pov-"+date);
+  state = saved || { order: shuffle(puzzle.flatMap(g=>g[1]), seeded(date)), solved: [], guesses: [], mistakes: 0, done: false };
+  state.sel = [];
+  $("dateLabel").textContent = "#"+numOf(date)+" · "+fmt(date);
+  render();
+}
+function save(){ const {sel,...rest}=state; store.set("pov-"+cur,rest); }
+
+function render(){
+  const b = $("board"); b.innerHTML = "";
+  state.solved.forEach(gi=>{
+    const g = puzzle[gi], el = document.createElement("div");
+    el.className = "solved c"+gi;
+    el.innerHTML = "<b></b><small></small>";
+    el.querySelector("b").textContent = g[0];
+    el.querySelector("small").textContent = g[1].join(", ");
+    b.appendChild(el);
+  });
+  const solvedWords = new Set(state.solved.flatMap(gi=>puzzle[gi][1]));
+  state.order.filter(w=>!solvedWords.has(w)).forEach(w=>{
+    const t = document.createElement("button");
+    t.className = "tile"+(state.sel.includes(w)?" sel":"");
+    t.textContent = w;
+    t.onclick = ()=>toggle(w);
+    b.appendChild(t);
+  });
+  $("dots").innerHTML = Array.from({length:MAX_MISTAKES},(_,i)=>'<span class="dot'+(i<state.mistakes?" gone":"")+'"></span>').join("");
+  $("submitBtn").disabled = state.sel.length!==4 || state.done;
+  $("clearBtn").disabled = state.sel.length===0;
+  $("controls").hidden = $("mistakesRow").hidden = state.done;
+  renderEnd();
+}
+
+function toggle(w){
+  if(state.done) return;
+  const i = state.sel.indexOf(w);
+  if(i>=0) state.sel.splice(i,1);
+  else if(state.sel.length<4) state.sel.push(w);
+  render();
+}
+
+function toast(msg){ const t=$("toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),1800); }
+
+let busy=false;
+function submit(){
+  if(busy) return;
+  const sel = state.sel.slice().sort();
+  const key = sel.join("|");
+  if(state.guesses.some(g=>g.key===key)){ toast("To si već pokušao/la!"); return; }
+  busy=true;
+  const colors = state.sel.map(w=>puzzle.findIndex(g=>g[1].includes(w)));
+  state.guesses.push({key, colors});
+  const gi = puzzle.findIndex(g=>sel.every(w=>g[1].includes(w)));
+  document.querySelectorAll(".tile.sel").forEach((t,i)=>setTimeout(()=>t.classList.add("jump"),i*80));
+
+  setTimeout(()=>{
+    if(gi>=0){
+      state.solved.push(gi); state.sel=[];
+      if(state.solved.length===4){ busy=false; finish(true); return; }
+      save(); render(); busy=false;
+    } else {
+      state.mistakes++;
+      const counts = {}; colors.forEach(c=>counts[c]=(counts[c]||0)+1);
+      const oneAway = Object.values(counts).some(v=>v===3);
+      document.querySelectorAll(".tile.sel").forEach(t=>{t.classList.remove("jump");t.classList.add("shake");});
+      if(state.mistakes>=MAX_MISTAKES){ toast("Kraj igre!"); save(); setTimeout(()=>{busy=false;finish(false);},600); return; }
+      toast(oneAway ? "Fali ti samo jedna!" : "Nije točno");
+      save(); setTimeout(()=>{render();busy=false;},420);
+    }
+  }, 420);
+}
+
+function finish(won){
+  state.done = true; state.won = won; state.sel = [];
+  if(!won){ for(let i=0;i<4;i++) if(!state.solved.includes(i)) state.solved.push(i); }
+  if(cur===today && !REVIEW){
+    const st = store.get("pov-stats2") || {played:0,won:0,streak:0,best:0,last:null};
+    if(st.last!==cur){
+      st.played++;
+      if(won){ st.won++; st.streak = (st.last===prevIso(cur)? st.streak:0)+1; st.best=Math.max(st.best,st.streak);} else st.streak=0;
+      st.last=cur; store.set("pov-stats2",st);
+    }
+  }
+  save(); render();
+  toast(won ? ["Savršeno!","Odlično!","Bravo!","Za dlaku!"][Math.min(state.mistakes,3)] : "Sljedeći put!");
+}
+
+function shareText(){
+  const rows = state.guesses.map(g=>g.colors.map(c=>EMOJI[c]).join("")).join("\n");
+  return "Poveznice #"+numOf(cur)+"\n"+rows+"\n"+location.origin+location.pathname;
+}
+
+function renderEnd(){
+  const e = $("end");
+  if(!state.done){ e.hidden=true; return; }
+  e.hidden=false;
+  const st = store.get("pov-stats2") || {played:0,won:0,streak:0,best:0};
+  e.innerHTML = "<h2>"+(state.won?"Riješeno!":"Više sreće sutra!")+"</h2>"+
+    "<div class='grid-emoji'>"+state.guesses.map(g=>g.colors.map(c=>EMOJI[c]).join("")).join("<br>")+"</div>"+
+    "<div class='stats'><div><b>"+st.played+"</b><span>odigrano</span></div><div><b>"+(st.played?Math.round(st.won/st.played*100):0)+"%</b><span>pobjeda</span></div><div><b>"+st.streak+"</b><span>niz</span></div><div><b>"+st.best+"</b><span>najduži niz</span></div></div>"+
+    "<button class='btn primary' id='shareBtn'>Kopiraj rezultat</button>"+
+    "<p style='color:var(--muted);font-size:.85rem'>Nova zagonetka sutra u ponoć.</p>";
+  $("shareBtn").onclick = ()=>{
+    navigator.clipboard.writeText(shareText()).then(()=>toast("Rezultat kopiran!")).catch(()=>toast("Kopiranje nije uspjelo"));
+  };
+}
+
+function buildArchive(list){
+  const s = $("archive");
+  list.slice().reverse().forEach(d=>{
+    const o=document.createElement("option"); o.value=d;
+    o.textContent = "#"+numOf(d)+(d===today?" (danas)":" · "+fromIso(d).toLocaleDateString("hr-HR",{day:"numeric",month:"numeric"}));
+    s.appendChild(o);
+  });
+  s.onchange = ()=>load(s.value);
+}
+
+$("shuffleBtn").onclick = ()=>{ state.order = shuffle(state.order); save(); render(); };
+$("clearBtn").onclick = ()=>{ state.sel=[]; render(); };
+$("submitBtn").onclick = submit;
+$("helpBtn").onclick = ()=>$("help").classList.add("open");
+$("closeHelp").onclick = ()=>$("help").classList.remove("open");
+$("help").onclick = e=>{ if(e.target.id==="help") $("help").classList.remove("open"); };
+window.addEventListener("hashchange",()=>location.reload());
+
+init();
+</script>
+</body>
+</html>
