@@ -55,7 +55,8 @@
   @keyframes pop{from{transform:scale(.9);opacity:.3}to{transform:scale(1);opacity:1}}
   .c0{background:var(--g1)}.c1{background:var(--g2)}.c2{background:var(--g3)}.c3{background:var(--g4)}
   .mistakes{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 12px;font-size:.95rem}
-  .dot{width:13px;height:13px;border-radius:50%;background:var(--tile-sel);transition:opacity .3s,transform .3s}
+  .dot{display:inline-block;width:13px;height:13px;border-radius:50%;background:var(--tile-sel);transition:opacity .3s,transform .3s}
+  #dots{display:inline-flex;gap:8px}
   .dot.gone{opacity:.15;transform:scale(.6)}
   .controls{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .btn{font:700 .95rem "Nunito Sans",sans-serif;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
@@ -345,8 +346,9 @@ async function init(){
   const visible = REVIEW ? DATES : DATES.filter(d=>d<=today);
   $("reviewBar").hidden = !REVIEW;
   if(!visible.length){
-    $("board").innerHTML='<div class="msg">Prva zagonetka stiže '+fmt(DATES[0]||today)+'. Vidimo se!</div>';
-    $("controls").hidden = $("mistakesRow").hidden = true;
+    $("board").innerHTML='<div class="msg">Prva zagonetka stiže '+fmt(DATES[0]||today)+'<br>Vidimo se!</div>';
+    $("controls").hidden = $("mistakesRow").hidden = $("intro").hidden = true;
+    $("archive").parentElement.hidden = true;
     await authReady; return;
   }
   buildArchive(visible);
